@@ -69,7 +69,7 @@ export const collections = [
     img1: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FWOMEN_sEvadeLSjersey_Land_PDP_SPECS_03_DESKTOP.jpg%3Fv%3D1660196045&w=1920&q=100",
     img2: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FWOMEN_sEvadeLSjersey_Land_PDP_HERO_01_DESKTOP.jpg%3Fv%3D1660196040&w=1920&q=100",
     category: "women",
-    featured: true
+    featured: false
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ export const collections = [
     img1: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FWOMEN_sDraftVest_Otter_PDP_SPECS_03_DESKTOP.jpg%3Fv%3D1660196024&w=1920&q=100",
     img2: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FWOMEN_sDraftVest_Otter_PDP_HERO_01_DESKTOP.jpg%3Fv%3D1660196019&w=1920&q=100",
     category: "women",
-    featured: false
+    featured: true
   },
   {
     id: 11,
@@ -160,7 +160,7 @@ export const collections = [
     img1: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMAP-MAC127_BIR_TrainingCap_Birch_PDP_HERO_01_DESKTOP.jpg%3Fv%3D1667427480&w=1920&q=100",
     img2: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMAP-MAC127_BIR_TrainingCap_Birch_PDP_SPECS_02_DESKTOP.jpg%3Fv%3D1667427480&w=1920&q=100",
     category: "accessories",
-    featured: true
+    featured: false
   },
   {
     id: 19,
@@ -187,7 +187,7 @@ export const collections = [
     img1: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMAP-MAA124_BLK_MAAPToolKeg_PDP_HERO_01_DESKTOP.jpg%3Fv%3D1668392544&w=1920&q=100",
     img2: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMAP-MAA124_BLK_MAAPToolKeg_PDP_SPECS_01_DESKTOP_VARIANT_02.jpg%3Fv%3D1668392544&w=1920&q=100",
     category: "accessories",
-    featured: false
+    featured: true
   },
   {
     id: 22,

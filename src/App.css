@@ -4,17 +4,29 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -23,7 +35,7 @@ img {
   height: auto;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -31,7 +43,7 @@ a{
 
 
 /* Navbar */
-.navbar{
+.navbar {
   width: 100%;
   padding: 15px;
   display: flex;
@@ -39,18 +51,18 @@ a{
   align-items: center;
 }
 
-.left{
+.left {
   flex: 1;
   display: flex;
   justify-content: left;
   gap: 10px;
 }
 
-.left span{
+.left span {
   cursor: pointer;
 }
 
-.center{
+.center {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -60,28 +72,28 @@ a{
   cursor: pointer;
 }
 
-.right{
+.right {
   flex: 1;
   display: flex;
   justify-content: right;
   gap: 10px;
 }
 
-.right span{
+.right span {
   cursor: pointer;
 }
 
 /* Collections */
-.collections{
+.collections {
   position: relative;
   display: flex;
 }
 
-.category-wrapper{
+.category-wrapper {
   cursor: pointer;
 }
 
-.category-women{
+.category-women {
   position: absolute;
   bottom: 30px;
   padding: 15px;
@@ -91,7 +103,7 @@ a{
   color: white;
 }
 
-.category-men{
+.category-men {
   position: absolute;
   bottom: 30px;
   padding: 15px;
@@ -103,20 +115,38 @@ a{
 
 /* Featured */
 
-.featured{
+.featured {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
 }
 
+.featured-wrapper{
+  position: relative;
+  cursor: pointer;
+}
+
+.featured-image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.250s ease;
+}
+
+.featured-image-hover:hover {
+  opacity: 1;
+}
+
+
+
 /* Footer */
-.footer{
+.footer {
   height: 40vh;
   background-color: #2b2d42;
   display: flex;
 }
 
-.footer-wrapper{
+.footer-wrapper {
   width: 100%;
   padding: 15px;
   display: flex;
@@ -126,7 +156,7 @@ a{
   gap: 20px;
 }
 
-.footer-logo{
+.footer-logo {
   color: white;
   font-size: 3rem;
   font-weight: bolder;
@@ -134,21 +164,21 @@ a{
   letter-spacing: 4px;
 }
 
-.footer-wrapper{
+.footer-wrapper {
   color: white;
 }
 
-.about-us{
+.about-us {
   display: flex;
   flex-direction: column;
 }
 
-.about-us-lists{
+.about-us-lists {
   display: flex;
   gap: 30px;
 }
 
-.newsletter-wrapper{
+.newsletter-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,7 +186,7 @@ a{
   margin-top: 30px;
 }
 
-.newsletter{
+.newsletter {
   background-color: white;
   width: 80%;
   height: 30px;
@@ -167,20 +197,15 @@ a{
   align-items: center;
 }
 
-input{
+input {
   border: none;
   padding: 7px;
   font-size: 1rem;
   outline: none;
 }
 
-button{
+button {
   padding: 7px;
   border: none;
   outline: none;
 }
-
-
-
-
-

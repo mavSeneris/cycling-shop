@@ -8,7 +8,6 @@ export default function Featured() {
       {collections.map((item) => {
         if (item.featured) {
           return (<FeaturedCards item={item} key={item.id} />)
-
         }
       })}
     </div>

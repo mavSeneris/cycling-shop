@@ -101,6 +101,77 @@ a{
   color: white;
 }
 
+/* Footer */
+.footer{
+  height: 40vh;
+  background-color: #2b2d42;
+  display: flex;
+}
+
+.footer-wrapper{
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo{
+  color: white;
+  font-size: 3rem;
+  font-weight: bolder;
+  font-style: italic;
+  letter-spacing: 4px;
+}
+
+.footer-wrapper{
+  color: white;
+}
+
+.about-us{
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us-lists{
+  display: flex;
+  gap: 30px;
+}
+
+.newsletter-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.newsletter{
+  background-color: white;
+  width: 80%;
+  height: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input{
+  border: none;
+  padding: 7px;
+  font-size: 1rem;
+  outline: none;
+}
+
+button{
+  padding: 7px;
+  border: none;
+  outline: none;
+}
+
 
 
 

@@ -17,15 +17,15 @@ const divStyle = {
 }
 const slideImages = [
   {
-    url: 'https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+    url: 'https://images.unsplash.com/photo-1631276893368-554b60393efb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     caption: 'Slide 1'
   },
   {
-    url: 'https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80',
+    url: 'https://images.unsplash.com/photo-1616560448125-ee0fc3a352a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQwfHxjeWNsaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60',
     caption: 'Slide 2'
   },
   {
-    url: 'https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+    url: 'https://images.unsplash.com/photo-1544011343-494fe72e6bab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     caption: 'Slide 3'
   },
 ];
@@ -37,7 +37,7 @@ const Slides = () => {
          {slideImages.map((slideImage, index)=> (
             <div key={index}>
               <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
-                <span style={spanStyle}>{slideImage.caption}</span>
+                
               </div>
             </div>
           ))} 

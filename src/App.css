@@ -63,7 +63,7 @@ a {
   gap: 10px;
 }
 
-.left span {
+.left span, .right span {
   cursor: pointer;
 }
 
@@ -84,10 +84,6 @@ a {
   gap: 10px;
 }
 
-.right span {
-  cursor: pointer;
-}
-
 /* Collections */
 .collections {
   position: relative;
@@ -98,17 +94,7 @@ a {
   cursor: pointer;
 }
 
-.category-women {
-  position: absolute;
-  bottom: 30px;
-  padding: 15px;
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: white;
-}
-
-.category-men {
+.category-women, .category-men {
   position: absolute;
   bottom: 30px;
   padding: 15px;
@@ -128,9 +114,15 @@ a {
 .featured-wrapper {
   position: relative;
   cursor: pointer;
+  height: 100%;
+}
+
+.featured-image {
+  height: 100%;
 }
 
 .featured-image-hover {
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -298,7 +290,8 @@ button {
 }
 
 /** Auth Pages */
-.login-page, .register-page {
+.login-page,
+.register-page {
   background-image: url("https://images.unsplash.com/photo-1609868900839-f7a9e3d1a52d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   background-size: cover;
   background-position: center center;
@@ -349,25 +342,25 @@ button {
 }
 
 /** Product Page  */
-.product-container{
+.product-container {
   display: flex;
   justify-content: center;
 }
 
-.product-images{
+.product-images {
   flex: 1.4;
   min-width: 600px;
   height: 100%;
   width: 100%;
 }
 
-.product-details{
+.product-details {
   flex: 1;
   justify-content: center;
   align-items: center;
 }
 
-.product-info{
+.product-info {
   width: 50vh;
   margin: 40px 10px;
   padding: 0 100px;
@@ -376,21 +369,19 @@ button {
   gap: 10px;
 }
 
-.item-name{
+.item-name {
   font-weight: 400;
   font-size: 1.2rem;
 }
 
-.item-description{
+.item-description {
   margin-top: 15px;
   font-weight: 300;
   line-height: 1.5;
   font-size: 1rem;
-  
+
 }
 
-.item-price{
+.item-price {
   margin-top: 15px;
 }
-
-

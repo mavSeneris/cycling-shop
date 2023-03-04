@@ -12,10 +12,10 @@ export default function App() {
   return (
     <div className="App">
       {/* <Home /> */}
-      {/* <Products /> */}
+      <Products />
       {/* <Login /> */}
       {/* <Register /> */}
-      <ProductPage/>
+      {/* <ProductPage/> */}
     </div>
   )
 };

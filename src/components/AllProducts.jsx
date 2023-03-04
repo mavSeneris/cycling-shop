@@ -8,7 +8,7 @@ export default function AllProducts() {
     <div className='all-products'>
     <h1 className='product-title'>MAAV Collections</h1>
       <div className='form-container'>
-        <form className='form'>
+        <form className='form-select'>
           <select className='sort price'>
             <option value="">Sort</option>
             <option value="option1">Price High to Low</option>

@@ -49,6 +49,11 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 3;
+
 }
 
 .left {
@@ -280,7 +285,7 @@ button {
   grid-column: 1/-1;
 }
 
-.form {
+.form-select {
   display: flex;
 }
 
@@ -369,6 +374,23 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.item-name{
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.item-description{
+  margin-top: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 1rem;
+  
+}
+
+.item-price{
+  margin-top: 15px;
 }
 
 

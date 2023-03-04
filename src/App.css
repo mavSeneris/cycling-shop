@@ -342,3 +342,33 @@ button {
   justify-content: center;
   gap: 5px;
 }
+
+/** Product Page  */
+.product-container{
+  display: flex;
+  justify-content: center;
+}
+
+.product-images{
+  flex: 1.4;
+  min-width: 600px;
+  height: 100%;
+  width: 100%;
+}
+
+.product-details{
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-info{
+  width: 50vh;
+  margin: 40px 10px;
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+

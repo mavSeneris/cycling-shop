@@ -13,9 +13,9 @@ export default function App() {
     <div className="App">
       {/* <Home /> */}
       {/* <Products /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <Register /> */}
-      {/* <ProductPage/> */}
+      <ProductPage/>
     </div>
   )
 };

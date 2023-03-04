@@ -64,7 +64,7 @@ a {
   gap: 10px;
 }
 
-.left span, .right span {
+.left span, .right span, .shopping-cart {
   cursor: pointer;
 }
 
@@ -85,6 +85,27 @@ a {
   align-items: center;
   gap: 10px;
 }
+
+
+.shopping-cart{
+  position: relative;
+}
+
+.item-count{
+  position: absolute;
+  background-color: blue;
+  width: 15px;
+  height: 15px;
+  color: white;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  top: 0px;
+  left: 13px;
+}
+
 
 /* Collections */
 .collections {

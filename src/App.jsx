@@ -1,16 +1,23 @@
 import Home from "./pages/Home"
-import './App.css'
 import Products from "./pages/ProductsPage"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import ProductPage from "./pages/ProductPage"
+import './App.css'
 
-function App() {
+
+export default function App() {
 
 
   return (
     <div className="App">
       {/* <Home /> */}
-      <Products />
+      {/* <Products /> */}
+      <Login />
+      {/* <Register /> */}
+      {/* <ProductPage/> */}
     </div>
   )
-}
+};
 
-export default App
+ 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { collections } from '../data'
-import MenCollections from '../components/WomenCollections'
+import WomenCollections from '../components/WomenCollections'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 

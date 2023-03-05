@@ -37,6 +37,7 @@ img {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 /** Home */
@@ -93,11 +94,12 @@ a {
 
 .item-count{
   position: absolute;
-  background-color: blue;
+  background-color: rgb(33, 33, 222);
   width: 15px;
   height: 15px;
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +134,19 @@ a {
 .featured {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+
+.featured-title{
+  margin-top: 50px;
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  text-transform: uppercase;	
+  letter-spacing: 4px;
+  height: 150px;
+  color: #424242;
 }
 
 .featured-wrapper {
@@ -407,4 +422,17 @@ button {
 
 .item-price {
   margin-top: 15px;
+}
+
+
+/*! REACT ROUTER CSS */
+
+#error-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }

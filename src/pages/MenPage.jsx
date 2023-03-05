@@ -1,6 +1,6 @@
 import React from 'react'
 import { collections } from '../data'
-import WomenCollections from '../components/WomenCollections'
+import MenCollection from '../components/MenCollection'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -8,7 +8,7 @@ export default function MenPage() {
   return (
     <>
       <Navbar/>
-      <h1 className='product-title'>MAAV Collections</h1>
+      <h1 className='product-title'>MAAV/Men Collections</h1>
       <div className='form-container'>
         <form className='form-select'>
           <select className='sort price'>
@@ -27,7 +27,7 @@ export default function MenPage() {
       <div className='all-products'>
         {collections.map((item) => {
           if (item.category === "men") {
-            return <WomenCollections key={item.id} item={item} />
+            return <MenCollection key={item.id} item={item} />
           }
         })}
       </div>

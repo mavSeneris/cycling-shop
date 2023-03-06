@@ -7,19 +7,19 @@ import {
 import Root from "./routes/root";
 import ErrorPage from "./error-page";
 import ProductsPage from './routes/ProductsPage';
-import App from './App'
-import Login from './pages/Login';
-import Register from './pages/Register';
-import WomenPage from './pages/WomenPage';
-import MenPage from './pages/MenPage';
-import ProductCard from './components/ProductCard';
-import ProductPage from './pages/ProductPage';
+import Login from './routes/Login';
+import Register from './routes/Register';
+import WomenPage from './routes/WomenPage';
+import MenPage from './routes/MenPage';
+import ProductPage from './routes/ProductPage';
+import './App.css'
 
+const isLogin = false
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Root isLogin={isLogin}/>,
     errorElement: <ErrorPage/>
   },
   {
@@ -51,7 +51,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
     <RouterProvider router={router} />
   </React.StrictMode>,
 )

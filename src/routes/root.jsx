@@ -6,10 +6,10 @@ import Navbar from '../components/Navbar'
 import Slides from '../components/Slides'
 
 
-export default function Home() {
+export default function Home({isLogin}) {
   return (
     <div className='home'>
-      <Navbar/>
+      <Navbar isLogin={isLogin}/>
       <Slides/>
       <Collections/>
       <Featured/>

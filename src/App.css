@@ -87,6 +87,11 @@ a {
   gap: 10px;
 }
 
+.auth{
+  display: flex;
+  gap: 10px;
+}
+
 
 .shopping-cart{
   position: relative;
@@ -342,6 +347,8 @@ button {
   align-items: center;
 }
 
+
+
 .register-page {
   background-image: url("https://images.unsplash.com/photo-1543227716-0d4bf05ed2c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
 }
@@ -397,10 +404,14 @@ button {
   flex: 1;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  
 }
 
 .product-info {
-  width: 50vh;
+  width: 100%;
+  max-width: 700px;
+  min-width: 400px;
   margin: 40px 10px;
   padding: 0 100px;
   display: flex;
@@ -436,4 +447,8 @@ button {
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+
+#error-page img {
+  width: 600px;
 }

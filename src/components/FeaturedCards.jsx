@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function FeaturedCards({ item }) {
+  console.log(item.featured)
   return (
     <div className='featured-container'>
       <div className='featured-wrapper'>

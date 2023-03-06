@@ -12,6 +12,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import WomenPage from './pages/WomenPage';
 import MenPage from './pages/MenPage';
+import ProductCard from './components/ProductCard';
+import ProductPage from './pages/ProductPage';
 
 
 const router = createBrowserRouter([
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/men",
     element: <MenPage />,
+  },
+  {
+    path: "/product/:id",
+    element: <ProductPage />,
   },
 ]);
 

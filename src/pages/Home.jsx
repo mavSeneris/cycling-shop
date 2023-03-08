@@ -9,11 +9,11 @@ import Slides from '../components/Slides'
 export default function Home() {
   return (
     <div className='home'>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Slides/>
       <Collections/>
       <Featured/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

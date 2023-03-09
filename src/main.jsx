@@ -14,13 +14,12 @@ import MenPage from './routes/MenPage';
 import ProductPage from './routes/ProductPage';
 import './App.css'
 
-const isLogin = false
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root isLogin={isLogin}/>,
-    errorElement: <ErrorPage/>
+    element: <Root />,
+    errorElement: <ErrorPage />
   },
   {
     path: "/collection",

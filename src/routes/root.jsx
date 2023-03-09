@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Collections from '../components/Collections'
 import Featured from '../components/Featured'
 import Footer from '../components/Footer'
@@ -7,12 +8,12 @@ import Slides from '../components/Slides'
 
 
 
-export default function Home({ isLogin }) {
- 
+export default function Home() {
+
 
   return (
     <div className='home'>
-      <Navbar isLogin={isLogin}/>
+      <Navbar />
       <Slides />
       <Collections />
       <Featured />

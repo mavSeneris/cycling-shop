@@ -7,7 +7,7 @@ export default function ProductsDetail({ item }) {
 
   function addToCart(id) {
     if (productId == id)
-      console.log("added to shopping bag!")
+      alert("added to shopping bag!")
       // Shopping bag logic goes here.
   }
 

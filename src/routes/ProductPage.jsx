@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { collections } from '../data'
 import { useLocation } from 'react-router-dom'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import ProductDetail from '../components/ProductDetail'
+import ProductDetail from '../routes/ProductDetail'
 
 export default function ProductPage() {
   const location = useLocation();
@@ -11,15 +9,11 @@ export default function ProductPage() {
 
   return (
     <div className='product-page-container'>
-      
       {collections.map(item => {
-
         if (id == item.id) {
-          return (<ProductDetail item={item} key={item.id}/>)
+          return (<ProductDetail item={item} key={item.id} />)
         }
       })}
-    
-
     </div>
   )
 }

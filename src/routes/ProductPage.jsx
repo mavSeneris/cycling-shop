@@ -11,14 +11,14 @@ export default function ProductPage() {
 
   return (
     <div className='product-page-container'>
-      <Navbar />
+      
       {collections.map(item => {
 
         if (id == item.id) {
           return (<ProductDetail item={item} key={item.id}/>)
         }
       })}
-      <Footer />
+    
 
     </div>
   )

@@ -7,11 +7,11 @@ import RegisterForm from '../components/RegisterForm'
 export default function Register() {
   return (
     <>
-      <Navbar/>
+      
       <div className='login-page'>
         <RegisterForm />
       </div>
-      <Footer/>
+      
     </>
 
   )

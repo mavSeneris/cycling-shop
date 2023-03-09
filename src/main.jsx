@@ -13,38 +13,62 @@ import WomenPage from './routes/WomenPage';
 import MenPage from './routes/MenPage';
 import ProductPage from './routes/ProductPage';
 import './App.css'
+import Home from './routes/Home';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/home",
+        element: <Home />
+      },
+      {
+        path: "/collection",
+        element: <ProductsPage />
+      },
+      {
+        path: "/men",
+        element: <MenPage />,
+      },
+      {
+        path: "/women",
+        element: <WomenPage />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/sign-up",
+        element: <Register />,
+      },
+      {
+        path: "/women",
+        element: <WomenPage />,
+      },
+      {
+        path: "/men",
+        element: <MenPage />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductPage />,
+      },
+    ]
   },
-  {
-    path: "/collection",
-    element: <ProductsPage />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/sign-up",
-    element: <Register />,
-  },
-  {
-    path: "/women",
-    element: <WomenPage />,
-  },
-  {
-    path: "/men",
-    element: <MenPage />,
-  },
-  {
-    path: "/product/:id",
-    element: <ProductPage />,
-  },
+  // {
+  //   path: "/collection",
+  //   element: <ProductsPage />,
+  // },
+  
 ]);
 
 

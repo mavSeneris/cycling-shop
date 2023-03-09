@@ -11,9 +11,9 @@ const [shoppingBag, setShoppingBag]= useState([])
 
   return (
     <div>
-      <Navbar shoppingBag={shoppingBag}/>
+      {/* <Navbar shoppingBag={shoppingBag}/> */}
       <AllProducts/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

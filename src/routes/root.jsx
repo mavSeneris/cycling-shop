@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { Outlet, Link } from 'react-router-dom'
 import Collections from '../components/Collections'
 import Featured from '../components/Featured'
 import Footer from '../components/Footer'
@@ -9,14 +9,20 @@ import Slides from '../components/Slides'
 
 
 export default function Home() {
+  const [bag, setBag] = useState([])
 
 
   return (
     <div className='home'>
-      <Navbar />
-      <Slides />
+      <Navbar bag={bag} setBag={setBag} />
+      {/* <Slides />
       <Collections />
-      <Featured />
+      <Featured /> */}
+
+      {/* eto un! */}
+      <Outlet />
+
+
       <Footer />
     </div>
   )

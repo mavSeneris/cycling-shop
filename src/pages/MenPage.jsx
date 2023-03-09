@@ -7,7 +7,6 @@ import Footer from '../components/Footer'
 export default function MenPage() {
   return (
     <>
-      <Navbar/>
       <h1 className='product-title'>MAAV/Men Collections</h1>
       <div className='form-container'>
         <form className='form-select'>
@@ -31,7 +30,6 @@ export default function MenPage() {
           }
         })}
       </div>
-      <Footer/>
     </>
 
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation, useOutletContext } from 'react-router-dom'
 import { collections } from '../data';
 import { nanoid } from 'nanoid';
@@ -6,8 +6,9 @@ import { nanoid } from 'nanoid';
 export default function ProductsDetail({ item }) {
   const [bag, setBag] = useOutletContext();
 
-  const location = useLocation()
-  const productId = location.pathname.slice()[9]
+  // const location = useLocation()
+  // const productId = location.pathname.slice()[9]
+
 
   function addToCart(id) {
     collections.map(item => {

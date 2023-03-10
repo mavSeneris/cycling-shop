@@ -439,7 +439,7 @@ button {
 
 
 /** Bag  */
-/* .bag{
+.bag{
   position: absolute;
     margin-top: 50px;
     right: -1.1%;
@@ -457,7 +457,56 @@ button {
     z-index: 1;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     overflow-y: scroll;
-} */
+}
+
+.bag h4 {
+  text-align: justify;
+  margin: 7px 0;
+}
+
+.bag-item-container-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 700px;
+  overflow-y: scroll;
+  padding-bottom: 200px;
+}
+
+.bag-item-container {
+  position: relative;
+  display: flex;
+  border: 1px var(--color-neutral) solid;
+  border-radius: 10px;
+  padding: 15px;
+  margin-right: 20px;
+  gap: 15px;
+}
+
+.bag-item-image {
+  width: 30%;
+  border-radius: 10px;
+}
+
+.shopping-bag-item-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+}
+
+.shopping-bag-item-text h5 {
+  font-weight: 700;
+  width: 150px;
+  line-height: 1;
+}
+
+.shopping-bag-item-text p {
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin: 0;
+}
 
 
 /*! REACT ROUTER CSS */

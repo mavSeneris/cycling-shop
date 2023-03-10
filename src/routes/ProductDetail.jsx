@@ -1,14 +1,30 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useOutletContext } from 'react-router-dom'
+import { collections } from '../data';
+import { nanoid } from "nanoid";
+
 
 export default function ProductsDetail({ item }) {
+  const [bag, setBag] = useOutletContext();
+
   const location = useLocation()
   const productId = location.pathname.slice()[9]
 
   function addToCart(id) {
-    if (productId == id)
-      alert("added to shopping bag!")
-      // Shopping bag logic goes here.
+
+      collections.map(item => {
+        if (item.id === id) {
+          setBag(currentItems =>
+            [...currentItems, item]
+          )
+        } else {
+          setBag(currentItems => {
+            return currentItems.map((item) => {
+              return item.id === id ? { ...item, id: nanoid() } : item
+            })
+          })
+        }
+      })
   }
 
   return (

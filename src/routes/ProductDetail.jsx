@@ -1,8 +1,7 @@
 import React from 'react'
 import { useLocation, useOutletContext } from 'react-router-dom'
 import { collections } from '../data';
-import { nanoid } from "nanoid";
-
+import { nanoid } from 'nanoid';
 
 export default function ProductsDetail({ item }) {
   const [bag, setBag] = useOutletContext();
@@ -11,20 +10,19 @@ export default function ProductsDetail({ item }) {
   const productId = location.pathname.slice()[9]
 
   function addToCart(id) {
-
-      collections.map(item => {
-        if (item.id === id) {
-          setBag(currentItems =>
-            [...currentItems, item]
-          )
-        } else {
-          setBag(currentItems => {
-            return currentItems.map((item) => {
-              return item.id === id ? { ...item, id: nanoid() } : item
-            })
+    collections.map(item => {
+      if (item.id === id) {
+        setBag(currentItems =>
+          [...currentItems, item]
+        )
+      } else {
+        setBag(currentItems => {
+          return currentItems.map((item) => {
+            return item.id === id ? { ...item, id: nanoid() } : item
           })
-        }
-      })
+        })
+      }
+    })
   }
 
   return (

@@ -16,7 +16,14 @@ export default function Home() {
   return (
     <div className='home'>
       <Navbar bag={bag} setBag={setBag} />
-      <Outlet context={[bag, setBag]} />
+      <Outlet context={
+        [
+          bag,
+          setBag,
+          isLogin,
+          setIsLogin
+        ]
+      } />
       <Footer />
     </div>
   )

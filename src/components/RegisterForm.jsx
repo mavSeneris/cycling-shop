@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 export default function RegisterForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [{ isLogin }, setIsLogin] = useOutletContext()
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -19,8 +21,11 @@ export default function RegisterForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(isLogin)
     // Your registration logic goes here
   };
+
+  console.log(isLogin)
 
   return (
     <div className="form-card">
@@ -59,7 +64,7 @@ export default function RegisterForm() {
           />
         </label>
 
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
 
       </form>
     </div>

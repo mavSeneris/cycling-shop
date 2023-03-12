@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { useLocation, useOutletContext } from 'react-router-dom'
+import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { collections } from '../data';
-import { nanoid } from 'nanoid';
 
 export default function ProductsDetail({ item }) {
   const [bag, setBag] = useOutletContext();
@@ -12,12 +11,13 @@ export default function ProductsDetail({ item }) {
       setBag(currentItems => {
         return currentItems.map((item) => {
           if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1, price: item.price + (item.price / item.quantity) };
+            return { ...item, quantity: item.quantity + 1, price: item.price }; // + (item.price / item.quantity)
+             
           } else {
             return item;
           }
-        })
-      })
+        });
+      });
     } else {
       const itemToAdd = collections.find(item => item.id === id);
       setBag(currentItems => [...currentItems, { ...itemToAdd, quantity: 1, price: itemToAdd.price }]);
@@ -41,5 +41,5 @@ export default function ProductsDetail({ item }) {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

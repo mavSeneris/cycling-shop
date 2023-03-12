@@ -4,7 +4,6 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  Navigate,
 } from "react-router-dom";
 import Root from "./routes/root";
 import ErrorPage from "./error-page";
@@ -59,8 +58,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router}>
-      {/* Add a Route to redirect from the index path to the home route */}
-      <Route path="/" element={<Navigate to="/home" />} />
     </RouterProvider>
   </React.StrictMode>,
 );

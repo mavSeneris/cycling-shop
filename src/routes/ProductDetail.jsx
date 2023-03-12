@@ -6,27 +6,6 @@ import { nanoid } from 'nanoid';
 export default function ProductsDetail({ item }) {
   const [bag, setBag] = useOutletContext();
 
-  // const location = useLocation()
-  // const productId = location.pathname.slice()[9]
-
-
-  // function addToCart(id) {
-  //   collections.map(item => {
-  //     if (item.id === id) {
-  //       setBag(currentItems =>
-  //         [...currentItems, item,]
-  //       )
-  //     } else {
-  //       setBag(currentItems => {
-  //         return currentItems.map((item) => {
-  //           return item.id === id ? { ...item, id: nanoid() } : item
-  //         })
-  //       })
-  //     }
-
-  //   })
-  // }
-
   function addToCart(id) {
     const existingItem = bag.find(item => item.id === id);
     if (existingItem) {

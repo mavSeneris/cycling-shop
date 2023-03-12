@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 
 export default function Home() {
   const [bag, setBag] = useState(() => JSON.parse(localStorage.getItem('bag')) || [])
+  const [isLogin, setIsLogin] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('bag', JSON.stringify(bag));

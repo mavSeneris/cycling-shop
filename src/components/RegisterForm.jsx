@@ -29,20 +29,38 @@ export default function RegisterForm() {
         <h3 className="form-subtitle">Sign-up</h3>
       </div>
 
-      <form onSubmit={handleSubmit} className="form">
+      <form
+        onSubmit={handleSubmit} className="form">
+
         <label>
           Username:
-          <input type="text" value={username} onChange={handleUsernameChange} />
+          <input
+            type="text"
+            value={username}
+            onChange={handleUsernameChange}
+          />
         </label>
+
         <label>
           Password:
-          <input type="password" value={password} onChange={handlePasswordChange} />
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
         </label>
+
         <label>
           Confirm Password:
-          <input type="password" value={confirmPassword} onChange={handleConfirmPasswordChange} />
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={handleConfirmPasswordChange}
+          />
         </label>
+
         <button type="submit">Submit</button>
+
       </form>
     </div>
 

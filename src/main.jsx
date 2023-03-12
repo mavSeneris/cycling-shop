@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
+  Route,
+  Navigate,
 } from "react-router-dom";
 import Root from "./routes/root";
 import ErrorPage from "./error-page";
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
-    children: [,
+    children: [
       {
         path: "/home",
         element: <Home />
@@ -43,37 +45,22 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/login",
-        element: <Login />,
-      },
-      {
         path: "/sign-up",
         element: <Register />,
-      },
-      {
-        path: "/women",
-        element: <WomenPage />,
-      },
-      {
-        path: "/men",
-        element: <MenPage />,
       },
       {
         path: "/product/:id",
         element: <ProductPage />,
       },
     ]
-  },
-  // {
-  //   path: "/collection",
-  //   element: <ProductsPage />,
-  // },
-
+  }
 ]);
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}>
+      {/* Add a Route to redirect from the index path to the home route */}
+      <Route path="/" element={<Navigate to="/home" />} />
+    </RouterProvider>
   </React.StrictMode>,
-)
+);

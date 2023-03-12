@@ -10,20 +10,39 @@ export default function ProductsDetail({ item }) {
   // const productId = location.pathname.slice()[9]
 
 
+  // function addToCart(id) {
+  //   collections.map(item => {
+  //     if (item.id === id) {
+  //       setBag(currentItems =>
+  //         [...currentItems, item,]
+  //       )
+  //     } else {
+  //       setBag(currentItems => {
+  //         return currentItems.map((item) => {
+  //           return item.id === id ? { ...item, id: nanoid() } : item
+  //         })
+  //       })
+  //     }
+
+  //   })
+  // }
+
   function addToCart(id) {
-    collections.map(item => {
-      if (item.id === id) {
-        setBag(currentItems =>
-          [...currentItems, item]
-        )
-      } else {
-        setBag(currentItems => {
-          return currentItems.map((item) => {
-            return item.id === id ? { ...item, id: nanoid() } : item
-          })
+    const existingItem = bag.find(item => item.id === id);
+    if (existingItem) {
+      setBag(currentItems => {
+        return currentItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1, price: item.price + (item.price / item.quantity) };
+          } else {
+            return item;
+          }
         })
-      }
-    })
+      })
+    } else {
+      const itemToAdd = collections.find(item => item.id === id);
+      setBag(currentItems => [...currentItems, { ...itemToAdd, quantity: 1, price: itemToAdd.price }]);
+    }
   }
 
   return (

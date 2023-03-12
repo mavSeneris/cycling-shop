@@ -545,6 +545,28 @@ button {
   margin-bottom: 10px;
 }
 
+.item-details{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.quantity{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+}
+
 /*! REACT ROUTER CSS */
 
 #error-page {

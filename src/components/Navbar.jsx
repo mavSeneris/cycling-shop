@@ -20,7 +20,7 @@ export default function Navbar({ bag, setBag }) {
 
   function handleAddQuantity(itemId) {
     const updatedItems = [...bag];
-    const itemIndex = updatedItems.findIndex(function(item) {
+    const itemIndex = updatedItems.findIndex(function (item) {
       return item.id === itemId;
     });
     updatedItems[itemIndex].quantity += 1;
@@ -29,20 +29,23 @@ export default function Navbar({ bag, setBag }) {
 
   function handleSubtractQuantity(itemId) {
     const updatedItems = [...bag];
-    const itemIndex = updatedItems.findIndex(function(item) {
+    const itemIndex = updatedItems.findIndex(function (item) {
       return item.id === itemId;
     });
     updatedItems[itemIndex].quantity -= 1;
+    if (updatedItems[itemIndex].quantity === 0) {
+      updatedItems.splice(itemIndex, 1);
+    }
     setBag(updatedItems);
   }
 
-  useEffect(() =>{})
-  const totalItemPrice = bag.reduce(function(total, item) {
+  useEffect(() => { })
+  const totalItemPrice = bag.reduce(function (total, item) {
     return total + item.quantity * item.price;
   }, 0);
 
   useEffect(() => {
-    const initialTotalPrice = totalItemPrice
+    const initialTotalPrice = 0
     const totalItemsPrice = bag.reduce((accumulator, current) =>
       accumulator + current.price, initialTotalPrice)
     setTotalPrice(totalItemsPrice)
@@ -61,12 +64,19 @@ export default function Navbar({ bag, setBag }) {
         <h5>{item.name}</h5>
         <p>{item.category}</p>
 
-        <div>
-        <button onClick={()=>{handleAddQuantity(item.id)}}>+</button>
-        <span>{item.quantity}</span>
-        <button onClick={()=>{handleSubtractQuantity(item.id)}}>-</button>
+        <div className='item-details'>
+          <div className='quantity'>
+            <button onClick={() => { handleAddQuantity(item.id) }}>+</button>
+            <span>{item.quantity}</span>
+            <button onClick={() => { handleSubtractQuantity(item.id) }}>-</button>
+          </div>
+
+          <p className="price">${item.quantity * item.price}.00</p>
+
         </div>
-        <p className="price">${item.quantity * item.price}</p>
+      </div>
+      <div >
+
       </div>
       <div className='delete-icon' onClick={(event) => deleteBagItem(event, item.id)}>
         <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"></path></svg>
@@ -121,7 +131,7 @@ export default function Navbar({ bag, setBag }) {
           </div>
 
           <div className="items-text-wrapper">
-            <p>${totalPrice}.00</p>
+            <p>${totalItemPrice}.00</p>
             <p>$4.59</p>
           </div>
         </div>

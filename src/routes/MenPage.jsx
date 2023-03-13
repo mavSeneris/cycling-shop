@@ -1,8 +1,6 @@
 import React from 'react'
 import { collections } from '../data'
 import MenCollection from '../components/MenCollection'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 
 export default function MenPage() {
   return (

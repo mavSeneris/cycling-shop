@@ -21,7 +21,7 @@ import Home from './routes/Home';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Root/>,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -58,8 +58,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-    <Navigate to={'/home'} replace={true} />
-    </RouterProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );

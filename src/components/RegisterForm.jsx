@@ -5,7 +5,7 @@ export default function RegisterForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [{ isLogin }, setIsLogin] = useOutletContext()
+  const [isLogin , setIsLogin] = useOutletContext(true)
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);

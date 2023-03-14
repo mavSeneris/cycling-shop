@@ -52,7 +52,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  
+
 }
 
 .welcome-img {
@@ -63,21 +63,21 @@ a {
   object-fit: cover;
 }
 
-.welcome-title{
+.welcome-title {
   font-size: 2.7rem;
   font-weight: 700;
   color: white;
   letter-spacing: 1px;
 }
 
-.shop-now a{
+.shop-now a {
   font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 1px;
   color: white;
 }
 
-.logo{
+.logo {
   font-weight: 700;
   letter-spacing: 2px;
   font-style: italic;
@@ -485,6 +485,19 @@ button {
 }
 
 
+.backlink {
+  padding: 7px;
+}
+
+.backlink button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+
 /** Bag  */
 .bag {
   position: absolute;
@@ -544,7 +557,9 @@ button {
 }
 
 .items-total-price-container {
+  border-top: #b8b8b8 1.5px solid;
   margin: 15px 32px 10px 0;
+  padding: 15px;
   font-size: 0.9rem;
   display: grid;
   grid-template-columns: auto auto;

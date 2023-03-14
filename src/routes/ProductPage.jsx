@@ -7,6 +7,7 @@ export default function ProductPage() {
   const location = useLocation();
   // Extract the ID from the URL using the pathname property
   const id = location.pathname.split('/')[2];
+  console.log(location.pathname.split('/')[2])
   
   return (
     <div className='product-page-container'>

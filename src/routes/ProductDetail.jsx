@@ -1,10 +1,16 @@
 import React from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, useNavigate } from 'react-router-dom';
 import { collections } from '../data';
 
 export default function ProductsDetail({ item }) {
   // Get the bag and the function to update it from the router context
   const [bag, setBag] = useOutletContext();
+  const navigate = useNavigate()
+  console.log(location)
+
+  function handleGoBack() {
+    navigate(-1)
+  }
 
   // Function to add an item to the cart
   function addToCart(id) {
@@ -32,6 +38,13 @@ export default function ProductsDetail({ item }) {
   // Render the product details and the button to add it to the cart
   return (
     <div>
+      <div className='backlink'>
+        <button onClick={handleGoBack}>
+          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M217.9 256L345 129c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.3-34 0L167 239c-9.1 9.1-9.3 23.7-.7 33.1L310.9 417c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L217.9 256z"></path></svg>
+          Back
+        </button>
+      </div>
+
       <div className='product-container'>
         <div className='product-images'>
           <img src={item.img1} />

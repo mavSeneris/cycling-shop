@@ -51,7 +51,7 @@ export default function Navbar({ bag, setBag }) {
     const updatedItems = [...bag]
     const itemIndex = updatedItems.findIndex(item => item.id === itemId)
     updatedItems[itemIndex].quantity -= 1
-  // and remove it if the quantity reaches zero.
+    // and remove it if the quantity reaches zero.
     if (updatedItems[itemIndex].quantity === 0) {
       updatedItems.splice(itemIndex, 1)
     }

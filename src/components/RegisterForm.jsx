@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from 'react-router-dom';
+
 
 export default function RegisterForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [isLogin , setIsLogin] = useOutletContext(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [username, setUsername, password, setPassword, isLoggedIn, setIsLoggedIn] = useOutletContext();
+  const redirect = useNavigate()
+
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -21,11 +25,24 @@ export default function RegisterForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(isLogin)
+    if (username && password === confirmPassword) {
+      setIsLoggedIn(true)
+      setPassword("")
+      setConfirmPassword("")
+      setUsername("")
+      console.log(isLoggedIn)
+      alert(`Welcome, ${username}!`)
+      redirect('/home')
+    }else if(password !== confirmPassword){
+      setIsLoggedIn(false)
+      console.log(isLoggedIn)
+      setPassword("")
+      setConfirmPassword("")
+      alert("Password didn't match. Try again")
+    }
+
     // Your registration logic goes here
   };
-
-  console.log(isLogin)
 
   return (
     <div className="form-card">

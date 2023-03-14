@@ -14,6 +14,8 @@ export default function ProductsDetail({ item }) {
   return (
     <div>
       <div className='product-container'>
+      <div>
+      </div>
         <div className='product-images'>
           <img src={item.img1} />
           <img src={item.img2} />

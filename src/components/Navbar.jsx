@@ -59,6 +59,8 @@ export default function Navbar({ bag, setBag, isLoggedIn, username }) {
     setBag(updatedItems)
   }
 
+  console.log(username)
+
   const bagItems = bag.map(item =>
     <div className="bag-item-container"
       key={nanoid()}
@@ -105,7 +107,7 @@ export default function Navbar({ bag, setBag, isLoggedIn, username }) {
       </div>
       <div className='center'><Link to={'/home'}>MAAV</Link></div>
       <div className='right'>
-        {!isLoggedIn ? <div className='auth'>
+        {isLoggedIn !== true ? <div className='auth'>
 
 
           <div className='login'>

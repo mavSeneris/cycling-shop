@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 export default function LoginForm() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
+  const [bag, setBag, isLoggedIn, setIsLoggedIn, password, setPassword, username, setUsername] = useOutletContext();
+
 
   function handleSubmit(event) {
     event.preventDefault();

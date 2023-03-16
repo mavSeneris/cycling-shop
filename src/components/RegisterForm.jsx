@@ -3,11 +3,10 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 
 
 export default function RegisterForm() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [username, setUsername, password, setPassword, isLoggedIn, setIsLoggedIn] = useOutletContext();
+  const [bag, setBag, isLoggedIn, setIsLoggedIn, password, setPassword, username, setUsername] = useOutletContext();
+
+
   const redirect = useNavigate()
 
 
@@ -26,15 +25,16 @@ export default function RegisterForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (username && password === confirmPassword) {
+      // setIsLoggedIn(true)
       setIsLoggedIn(true)
-      setPassword("")
-      setConfirmPassword("")
-      setUsername("")
-      console.log(isLoggedIn)
+      setUsername(username)
+      setPassword(password)
+      console.log(username)
+      console.log(isLoggedIn ? "succesfully logged in." : "Logged in failed.")
       alert(`Welcome, ${username}!`)
       redirect('/home')
-    }else if(password !== confirmPassword){
-      setIsLoggedIn(false)
+    } else if (password !== confirmPassword) {
+      // setIsLoggedIn(false)
       console.log(isLoggedIn)
       setPassword("")
       setConfirmPassword("")

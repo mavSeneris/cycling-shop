@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { nanoid } from 'nanoid'
 
-export default function Navbar({ bag, setBag }) {
+export default function Navbar({ bag, setBag, isLoggedIn, username }) {
   const [showBag, setShowBag] = useState(false)
   const [totalPrice, setTotalPrice] = useState()
 
+  
   const location = useLocation()
   const path = location.pathname
 
@@ -104,7 +105,9 @@ export default function Navbar({ bag, setBag }) {
       </div>
       <div className='center'><Link to={'/home'}>MAAV</Link></div>
       <div className='right'>
-        <div className='auth'>
+        {!isLoggedIn ? <div className='auth'>
+
+
           <div className='login'>
             <span>
               <a href={`/login`}>Login</a>
@@ -115,7 +118,8 @@ export default function Navbar({ bag, setBag }) {
               <a href={`/sign-up`}>Sign-up</a>
             </span>
           </div>
-        </div>
+
+        </div> : <div className='username'>{username}</div>}
 
         {path !== "/" && <div className='shopping-cart' onClick={toggleBag}>
           <a href={'#'}>

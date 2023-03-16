@@ -16,9 +16,8 @@ export default function ProductsDetail({ item }) {
   function addToCart(id) {
     // Check if the item is already in the bag
     const existingItem = bag.find(item => item.id === id);
-
-    if (existingItem) {
       // If the item is already in the bag, update its quantity and price
+    if (existingItem) {
       setBag(currentItems => {
         return currentItems.map((item) => {
           if (item.id === id) {

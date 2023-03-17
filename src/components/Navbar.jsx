@@ -6,7 +6,7 @@ export default function Navbar({ bag, setBag, isLoggedIn, username }) {
   const [showBag, setShowBag] = useState(false)
   const [totalPrice, setTotalPrice] = useState()
 
-  
+
   const location = useLocation()
   const path = location.pathname
 
@@ -107,22 +107,13 @@ export default function Navbar({ bag, setBag, isLoggedIn, username }) {
       </div>
       <div className='center'><Link to={'/home'}>MAAV</Link></div>
       <div className='right'>
-        {isLoggedIn !== true ? <div className='auth'>
-
-
-          <div className='login'>
-            <span>
-              <a href={`/login`}>Login</a>
-            </span>
+        {!isLoggedIn ? <div className='auth'>
+          <div className='sign-in'>
+            <Link to='/login'>
+              <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1.48em" width="1.48em" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </Link>
           </div>
-          <div className='sign-up'>
-            <span>
-              <a href={`/sign-up`}>Sign-up</a>
-            </span>
-          </div>
-
         </div> : <div className='username'>{username}</div>}
-
         {path !== "/" && <div className='shopping-cart' onClick={toggleBag}>
           <a href={'#'}>
             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="1.4em" width="1.4em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M14 5H2v9a1 1 0 001 1h10a1 1 0 001-1V5zM1 4v10a2 2 0 002 2h10a2 2 0 002-2V4H1z" clipRule="evenodd"></path><path d="M8 1.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"></path></svg>
@@ -138,7 +129,6 @@ export default function Navbar({ bag, setBag, isLoggedIn, username }) {
             <p>Bag total:</p>
             <p>Delivery</p>
           </div>
-
           <div className="items-text-wrapper">
             <p>${totalItemPrice}.00</p>
             <p>$4.59</p>

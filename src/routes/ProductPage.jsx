@@ -2,8 +2,10 @@ import React from 'react';
 import { collections } from '../data';
 import { useLocation } from 'react-router-dom';
 import ProductDetail from '../routes/ProductDetail';
+import { useOutletContext } from 'react-router-dom';
 
 export default function ProductPage() {
+  const [bag, setBag, isLoggedIn, setIsLoggedIn, password, setPassword, username, setUsername] = useOutletContext();
   const location = useLocation();
   // Extract the ID from the URL using the pathname property
   const id = location.pathname.split('/')[2];
@@ -16,7 +18,7 @@ export default function ProductPage() {
         if (id == item.id) {
           // Pass the item as a prop to ProductDetail component
           // Use item.id as the key for the component
-          return <ProductDetail item={item} key={item.id} />;
+          return <ProductDetail item={item} key={item.id} username={username} />;
         }
         // Return null for other items to avoid rendering unnecessary components
         return null;

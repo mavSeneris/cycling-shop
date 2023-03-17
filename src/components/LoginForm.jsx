@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { Link, redirect, useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   // const [username, setUsername] = useState("");
@@ -13,27 +14,30 @@ export default function LoginForm() {
   }
 
   return (
-    
-      <div className="form-card">
-        <div className="form-title">
-          <h2 className="form-logo">MAAV</h2>
-          <h3 className="form-subtitle">Login</h3>
-        </div>
 
-        <form onSubmit={handleSubmit} className="form">
-          <label>
-            Username:
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-          </label>
-          <br />
-          <label>
-            Password:
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          </label>
-          <br />
-          <button type="submit">Sign-in</button>
-        </form>
+    <div className="form-card">
+      <div className="form-title">
+        <h2 className="form-logo">MAAV</h2>
+        <h3 className="form-subtitle">Login</h3>
       </div>
+
+      <form onSubmit={handleSubmit} className="form">
+        <label>
+          Username:
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </label>
+        <br />
+        <button type="submit">Sign-in</button> 
+      </form>
+      <div>
+          <Link to='/sign-up'>Create an account</Link>
+        </div>
+    </div>
 
 
   );

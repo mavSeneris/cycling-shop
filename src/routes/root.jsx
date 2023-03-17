@@ -4,26 +4,22 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 export default function Home() {
-  // Initialize 'username' state with data from localStorage or an empty string
-  const [username, setUsername] = useState(() => localStorage.getItem('username') || '');
+  //Initialize 'bag' state with data from localStorage or an empty array
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [bag, setBag] = useState(() => JSON.parse(localStorage.getItem('bag')) || [])
   const location = useLocation()
   const path = location.pathname
 
-  // Update localStorage whenever the 'bag' or 'username' state changes
+  // Update localStorage whenever the 'bag' state changes
   useEffect(() => {
     localStorage.setItem('bag', JSON.stringify(bag));
   }, [bag])
-
-  useEffect(() => {
-    localStorage.setItem('username', username);
-  }, [username])
   
+
   return (
     <div className='home'>
-      {/* Render the Navbar component and pass 'bag' and 'setBag' props */}
       <Navbar bag={bag} setBag={setBag} isLoggedIn={isLoggedIn} username={username} />
       {/* Render a welcome message and image only when the path is '/' */}
       {path === "/" && <div className='welcome'>

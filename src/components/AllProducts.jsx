@@ -6,6 +6,7 @@ import ProductCard from './ProductCard'
 
 
 export default function AllProducts() {
+  
   const navigate = useNavigate()
   console.log(location)
 

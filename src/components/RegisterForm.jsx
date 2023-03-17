@@ -26,7 +26,7 @@ export default function RegisterForm() {
     event.preventDefault();
     if (username && password === confirmPassword) {
       // setIsLoggedIn(true)
-      setIsLoggedIn(true)
+      setIsLoggedIn(prevLoggedIn => !prevLoggedIn)
       setUsername(username)
       setPassword(password)
       console.log(username)
@@ -81,7 +81,7 @@ export default function RegisterForm() {
           />
         </label>
 
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        <button type="submit" onClick={handleSubmit}>Create</button>
 
       </form>
     </div>

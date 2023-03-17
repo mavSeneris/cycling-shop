@@ -6,11 +6,15 @@ export default function LoginForm() {
   // const [username, setUsername] = useState("");
   // const [password, setPassword] = useState("");
   const [bag, setBag, isLoggedIn, setIsLoggedIn, password, setPassword, username, setUsername] = useOutletContext();
-
+  const navigate = useNavigate()
 
   function handleSubmit(event) {
     event.preventDefault();
     console.log(`Username: ${username}\nPassword: ${password}`);
+  }
+
+  function handlePrevPage(){
+    navigate(-1)
   }
 
   return (
@@ -32,11 +36,13 @@ export default function LoginForm() {
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <br />
-        <button type="submit">Sign-in</button> 
+        <button type="submit">Sign-in</button>
       </form>
       <div>
-          <Link to='/sign-up'>Create an account</Link>
-        </div>
+        <Link to='/sign-up'>Create an account</Link>
+      </div >
+      <button className='login-back' onClick={handlePrevPage}>Back</button>
+      
     </div>
 
 

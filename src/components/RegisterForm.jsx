@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useOutletContext } from 'react-router-dom';
+import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 
 
 export default function RegisterForm() {
@@ -80,10 +80,9 @@ export default function RegisterForm() {
             onChange={handleConfirmPasswordChange}
           />
         </label>
-
         <button type="submit" onClick={handleSubmit}>Create</button>
-
       </form>
+      <span>Don't have an account? <Link style={{ textDecoration: 'underline', color: 'blue' }} to='/login'>Login</Link></span>
     </div>
 
 

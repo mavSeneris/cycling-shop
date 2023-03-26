@@ -43,8 +43,10 @@ export default function LoginForm() {
         <button type="submit">Sign-in</button>
       </form>
       <div>
-        <Link to='/sign-up'>Create an account</Link>
+        {/* <Link to='/sign-up'>Create an account</Link> */}
       </div >
+      <span>Don't have an account? <Link style={{textDecoration: 'underline', color: 'blue'}}to='/sign-up'>Register</Link></span>
+
       <button className='login-back' onClick={handlePrevPage}>Back</button>
       
     </div>

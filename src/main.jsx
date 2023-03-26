@@ -48,7 +48,15 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: `${'women' && 'men'}/product/:id`,
+        path: `/collection/product/:id`,
+        element: <ProductPage />,
+      },
+      {
+        path: `/men/product/:id`,
+        element: <ProductPage />,
+      },
+      {
+        path: `/women/product/:id`,
         element: <ProductPage />,
       },
     ]

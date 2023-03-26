@@ -8,8 +8,8 @@ export default function ProductPage() {
   const [bag, setBag, isLoggedIn, setIsLoggedIn, password, setPassword, username, setUsername] = useOutletContext();
   const location = useLocation();
   // Extract the ID from the URL using the pathname property
-  const id = location.pathname.split('/')[2];
-  console.log(location.pathname.split('/')[2])
+  const id = location.pathname.split('/')[3];
+  console.log(location.pathname.split('/')[3])
   
   return (
     <div className='product-page-container'>

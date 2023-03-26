@@ -11,11 +11,15 @@ export default function LoginForm() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(`Username: ${username}\nPassword: ${password}`);
+    navigate('/home')
+    setIsLoggedIn(true)
+    console.log(isLoggedIn)
   }
 
   function handlePrevPage(){
     navigate(-1)
   }
+
 
   return (
 

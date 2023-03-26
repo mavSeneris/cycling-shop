@@ -16,6 +16,10 @@ export default function Home() {
   useEffect(() => {
     localStorage.setItem('bag', JSON.stringify(bag));
   }, [bag])
+
+  useEffect(() => {
+    localStorage.setItem('username', JSON.stringify(username));
+  }, [username])
   
 
   return (

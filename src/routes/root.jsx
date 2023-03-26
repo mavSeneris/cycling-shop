@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <div className='home'>
-      <Navbar bag={bag} setBag={setBag} isLoggedIn={isLoggedIn} username={username} />
+      <Navbar bag={bag} setBag={setBag} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUsername={setUsername} username={username} />
       {/* Render a welcome message and image only when the path is '/' */}
       {path === "/" && <div className='welcome'>
         <h2 className='welcome-title'>PURSUE A NEW DIMENSION</h2>

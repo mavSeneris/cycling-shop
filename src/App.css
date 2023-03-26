@@ -160,6 +160,15 @@ a {
   left: 13px;
 }
 
+.username{
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.logout-icon{
+  cursor: pointer;
+}
+
 
 /* Collections */
 .collections {

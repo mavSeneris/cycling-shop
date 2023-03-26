@@ -1,15 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function FeaturedCards({ item }) {
 
   return (
     <div className='featured-container'>
-      <a href={`product/${item.id}`}>
+      <Link to={`product/${item.id}`}>
         <div className='featured-wrapper'>
           <img className='featured-image' src={item.img1} />
           <img className='featured-image-hover' src={item.img2} />
         </div>
-      </a>
+      </Link>
 
     </div>
   )

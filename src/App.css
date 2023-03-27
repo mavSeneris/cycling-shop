@@ -396,6 +396,22 @@ button {
   .all-products {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .product-name, 
+  .product-price{
+    font-size: 0.8rem;
+  }
+}
+
+@media(max-width: 25rem){
+  .all-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-name, 
+  .product-price{
+    font-size: 0.7rem;
+  }
 }
 
 /** Auth Pages */
@@ -411,8 +427,6 @@ button {
   justify-content: center;
   align-items: center;
 }
-
-
 
 .register-page {
   background-image: url("https://images.unsplash.com/photo-1543227716-0d4bf05ed2c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");

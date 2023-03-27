@@ -160,12 +160,12 @@ a {
   left: 13px;
 }
 
-.username{
+.username {
   cursor: pointer;
   font-weight: 500;
 }
 
-.logout-icon{
+.logout-icon {
   cursor: pointer;
 }
 
@@ -390,6 +390,14 @@ button {
   padding: 20px;
 }
 
+
+/*TODO RODUCTS PAGE: TABLET */
+@media(max-width: 60rem){
+  .all-products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /** Auth Pages */
 .login-page,
 .register-page {
@@ -444,7 +452,7 @@ button {
   gap: 5px;
 }
 
-.login-back{
+.login-back {
   align-self: flex-end;
 }
 
@@ -456,7 +464,7 @@ button {
 
 .product-images {
   flex: 1.4;
-  min-width: 600px;
+  min-width: 200px;
   height: 100%;
   width: 100%;
 }
@@ -472,17 +480,19 @@ button {
 .product-info {
   width: 100%;
   max-width: 700px;
-  min-width: 400px;
-  margin: 40px 10px;
-  padding: 0 100px;
+  min-width: 200px;
+  padding: 30px 50px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+
+
 .item-name {
   font-weight: 400;
   font-size: 1.2rem;
+  width: max-content;
 }
 
 .item-description {
@@ -497,7 +507,6 @@ button {
   margin-top: 15px;
 }
 
-
 .backlink {
   padding: 7px;
 }
@@ -509,6 +518,20 @@ button {
   cursor: pointer;
 }
 
+/*TODO PRODUCT PAGE: TABLET */
+@media(max-width: 60rem) {
+  .product-info {
+    padding: 15px 30px;
+  }
+
+  .product-info>.item-name {
+    font-size: 1rem;
+  }
+
+  .product-info>.item-description {
+    font-size: 0.9rem;
+  }
+}
 
 
 /** Bag  */

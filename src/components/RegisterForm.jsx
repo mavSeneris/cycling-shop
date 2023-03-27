@@ -22,17 +22,13 @@ export default function RegisterForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (username && password === confirmPassword) {
-      // setIsLoggedIn(true)
       setIsLoggedIn(prevLoggedIn => !prevLoggedIn)
       setUsername(username)
       setPassword(password)
-      console.log(username)
-      console.log(isLoggedIn ? "succesfully logged in." : "Logged in failed.")
       alert(`Welcome, ${username}!`)
       redirect('/home')
     } else if (password !== confirmPassword || confirmPassword == null) {
-      // setIsLoggedIn(false)
-      console.log(isLoggedIn)
+      setIsLoggedIn(false)
       setPassword("")
       setConfirmPassword("")
       alert("Password didn't match. Try again")

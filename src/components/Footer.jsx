@@ -14,19 +14,19 @@ export default function Footer() {
             <h3>Careers</h3>
           </div>
 
-          <div className='newsletter-wrapper'>
+          {/* <div className='newsletter-wrapper'>
             <span>Newsletter</span>
             <form className='newsletter'>
               <input type="text" placeholder='Sign-up for our newsletter' />
               <button>Send</button>
             </form>
-
-          <div className='copyright'>
-            <small>&copy; 2023 MAAV.CC</small>
-          </div>
-          </div>
+          </div> */}
         </div>
       </div>
+      <div className='copyright'>
+      <small>&copy; 2023 MAAV.CC</small>
+      </div>
+
     </div>
   )
 }

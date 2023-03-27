@@ -557,8 +557,10 @@ button {
     margin: 30px 0;
     font-size: 1rem;
     height: 40px;
-
-
+  }
+  .product-images{
+    display: flex;
+    overflow: scroll;
   }
 }
 

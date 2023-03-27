@@ -12,14 +12,14 @@ export default function ProductsDetail({ item }) {
   }
 
   return (
-    <div>
+    
       <div className='product-container'>
-      <div>
-      </div>
+
         <div className='product-images'>
           <img src={item.img1} />
           <img src={item.img2} />
         </div>
+        
         <div className="product-details">
           <div className='product-info'>
             <h2 className='item-name'>{item.name}</h2>
@@ -29,6 +29,6 @@ export default function ProductsDetail({ item }) {
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }

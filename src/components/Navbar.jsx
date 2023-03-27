@@ -122,7 +122,7 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
 
 
         <div class="burger-menu">
-          <input type="checkbox" value='false' class="burger-toggle" id="burger-toggle" />
+          <input type="checkbox" class="burger-toggle" id="burger-toggle" />
           <label for="burger-toggle" class="burger-icon">
             <span></span>
             <span></span>
@@ -142,9 +142,6 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
         </div>
 
       </div>
-
-
-
       <div className='center'><Link to={'/home'}>MAAV</Link></div>
       <div className='right'>
         {!isLoggedIn ? <div className='auth'>

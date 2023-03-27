@@ -13,8 +13,25 @@ const divStyle = {
   alignItems: 'center',
   justifyContent: 'center',
   backgroundSize: 'cover',
-  height: '700px'
+  height: '80vh'
 }
+
+const responsiveSettings = [
+  {
+    breakpoint: 800,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    },
+  },
+  {
+    breakpoint: 500,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  }
+];
 const slideImages = [
   {
     url: 'https://images.unsplash.com/photo-1631276893368-554b60393efb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
@@ -31,19 +48,19 @@ const slideImages = [
 ];
 
 const Slides = () => {
-    return (
-      <div className="slide-container">
-        <Slide>
-         {slideImages.map((slideImage, index)=> (
-            <div key={index}>
-              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
-                
-              </div>
+  return (
+    <div className="slide-container" >
+      <Slide responsive={responsiveSettings}>
+        {slideImages.map((slideImage, index) => (
+          <div key={index}>
+            <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
+
             </div>
-          ))} 
-        </Slide>
-      </div>
-    )
+          </div>
+        ))}
+      </Slide>
+    </div>
+  )
 }
 
 

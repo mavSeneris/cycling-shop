@@ -3,8 +3,6 @@ import { Link, redirect, useOutletContext } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
   const [bag, setBag, isLoggedIn, setIsLoggedIn, password, setPassword, username, setUsername] = useOutletContext();
   const navigate = useNavigate()
 

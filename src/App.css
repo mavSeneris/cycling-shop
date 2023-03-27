@@ -87,6 +87,8 @@ a {
 /** Home */
 
 
+
+
 /* Navbar */
 .navbar {
   position: relative;
@@ -547,7 +549,7 @@ a {
 }
 
 .form-card {
-  height: 30vh;
+  height: 500px;
   border-radius: 10px;
   padding: 30px;
   background-color: white;
@@ -582,6 +584,13 @@ a {
 
 .login-back {
   align-self: flex-end;
+}
+
+/*TODO AUTH PAGES: MOBILE */
+@media(max-width: 30rem){
+  .form-card{
+    height: 100vh;
+  }
 }
 
 /** Product Page  */

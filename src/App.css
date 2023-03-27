@@ -307,13 +307,14 @@ a {
 }
 
 
-/* Collections */
+/** COLLECTIONS COMPONENT */
 .collections {
-  position: relative;
+  /* position: relative; */
   display: flex;
 }
 
 .category-wrapper {
+  position: relative;
   cursor: pointer;
 }
 
@@ -328,7 +329,15 @@ a {
   color: white;
 }
 
-/* Featured */
+/*TODO COLLECTIONS COMPONENT: MOBILE  */
+@media(max-width: 30rem) {
+  .collections {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/** FEATURED COMPONENT */
 .featured {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -371,16 +380,24 @@ a {
 }
 
 /*TODO FEATURED PAGE: TABLET  */
-@media(max-width: 60rem){
+@media(max-width: 60rem) {
   .featured {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .featured-title {
+    font-size: 2.3rem;
   }
 }
 
 /*TODO FEATURED PAGE: MOBILE  */
-@media(max-width: 30rem){
+@media(max-width: 30rem) {
   .featured {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-title {
+    font-size: 1.978rem;
   }
 }
 
@@ -873,7 +890,7 @@ button {
 /*TODO FOOTER: TABLET  */
 
 /*TODO FOOTER: MOBILE  */
-@media(max-width: 30rem){
+@media(max-width: 30rem) {
   .about-us-lists {
     display: flex;
     flex-direction: column;

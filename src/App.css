@@ -214,7 +214,7 @@ a {
 /* Animation styles */
 
 .burger-toggle:checked~.burger-icon span:first-child {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 13px);
 }
 
 .burger-toggle:checked~.burger-icon span:nth-child(2) {
@@ -222,7 +222,7 @@ a {
 }
 
 .burger-toggle:checked~.burger-icon span:last-child {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(1px, -9px);
 }
 
 .burger-toggle:checked~.burger-nav {

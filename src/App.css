@@ -329,7 +329,6 @@ a {
 }
 
 /* Featured */
-
 .featured {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -372,9 +371,18 @@ a {
 }
 
 /*TODO FEATURED PAGE: TABLET  */
+@media(max-width: 60rem){
+  .featured {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /*TODO FEATURED PAGE: MOBILE  */
-
+@media(max-width: 30rem){
+  .featured {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 
 

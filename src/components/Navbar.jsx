@@ -108,16 +108,43 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
   return (
     <div className='navbar'>
       <div className='left'>
-        <div>
-          <span><Link to={`/collection`}>All</Link></span>
+        <div className='nav-menu'>
+          <div>
+            <span><Link to={`/collection`}>All</Link></span>
+          </div>
+          <div>
+            <span><Link to={`/men`}>Men</Link></span>
+          </div>
+          <div>
+            <span><Link to={`/women`}>Women</Link></span>
+          </div>
         </div>
-        <div>
-          <span><Link to={`/men`}>Men</Link></span>
+
+
+        <div class="burger-menu">
+          <input type="checkbox" value='false' class="burger-toggle" id="burger-toggle" />
+          <label for="burger-toggle" class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <nav class="burger-nav">
+            <div>
+              <span><Link to={`/collection`}>All</Link></span>
+            </div>
+            <div>
+              <span><Link to={`/men`}>Men</Link></span>
+            </div>
+            <div>
+              <span><Link to={`/women`}>Women</Link></span>
+            </div>
+          </nav>
         </div>
-        <div>
-          <span><Link to={`/women`}>Women</Link></span>
-        </div>
+
       </div>
+
+
+
       <div className='center'><Link to={'/home'}>MAAV</Link></div>
       <div className='right'>
         {!isLoggedIn ? <div className='auth'>

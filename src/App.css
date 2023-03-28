@@ -87,7 +87,7 @@ a {
 
 
 /*TODO WELCOME PAGE TABLET  */
-@media(max-width: 60rem){
+@media(max-width: 60rem) {
   .welcome-title {
     width: min-content;
     font-size: 3.4rem;
@@ -97,7 +97,7 @@ a {
 }
 
 /*TODO WELCOME PAGE MOBILE  */
-@media(max-width: 30rem){
+@media(max-width: 30rem) {
   .welcome-title {
     width: fit-content;
     font-size: 2rem;
@@ -110,17 +110,7 @@ a {
 
 /** Home */
 
-.slide-caption {
-  font-size: 3rem;
-}
-
-
-@media(max-width: 30rem) {
-  .slide {
-    width: 100vw;
-    height: 100vh;
-  }
-
+@media(max-width: 60rem) {
   .slide-image {
     width: 100%;
     display: flex;
@@ -132,9 +122,13 @@ a {
     background-position: center;
     background-repeat: no-repeat, repeat;
   }
+}
 
-  .slide-caption {
-    font-size: 1rem;
+
+@media(max-width: 30rem) {
+  .slide {
+    width: 100vw;
+    height: 100vh;
   }
 
 }
@@ -536,6 +530,7 @@ a {
   position: relative;
   cursor: pointer;
 }
+
 
 .item-card {
   height: 100%;

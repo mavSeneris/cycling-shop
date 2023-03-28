@@ -13,8 +13,8 @@ const spanStyle = {
   letterSpacing: '3px',
   fontStyle: 'italic',
   position: 'absolute',
-  bottom: '30px',
-  left: '-4px',
+  bottom: '50px',
+  left: '10px',
 }
 
 const divStyle = {

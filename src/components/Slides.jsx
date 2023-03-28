@@ -12,6 +12,9 @@ const spanStyle = {
   fontWeight: '800',
   letterSpacing: '3px',
   fontStyle: 'italic',
+  position: 'absolute',
+  bottom: '30px',
+  left: '-4px',
 }
 
 const divStyle = {
@@ -22,6 +25,7 @@ const divStyle = {
   // backgroundRepeat: 'no-repeat',
   // width: '100%',
   height: '700px',
+  position: 'relative'
 }
 
 

@@ -42,7 +42,7 @@ a {
 
 /** Welcome Page */
 .welcome {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: relative;
   width: 100%;
@@ -64,10 +64,12 @@ a {
 }
 
 .welcome-title {
-  font-size: 2.7rem;
+  width: fit-content;
+  text-align: center;
+  font-size: 4rem;
   font-weight: 700;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: 6px;
 }
 
 .shop-now a {
@@ -82,6 +84,28 @@ a {
   letter-spacing: 2px;
   font-style: italic;
 }
+
+
+/*TODO WELCOME PAGE TABLET  */
+@media(max-width: 60rem){
+  .welcome-title {
+    width: min-content;
+    font-size: 3.4rem;
+    letter-spacing: 5px;
+    line-height: 1.5;
+  }
+}
+
+/*TODO WELCOME PAGE MOBILE  */
+@media(max-width: 30rem){
+  .welcome-title {
+    width: fit-content;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    line-height: 1.8;
+  }
+}
+
 
 
 /** Home */

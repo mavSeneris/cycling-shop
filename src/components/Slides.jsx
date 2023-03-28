@@ -14,7 +14,8 @@ const spanStyle = {
   fontStyle: 'italic',
   position: 'absolute',
   bottom: '50px',
-  left: '10px',
+  left: '0px',
+  width: 'fit-content'
 }
 
 const divStyle = {

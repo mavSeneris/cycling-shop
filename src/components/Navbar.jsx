@@ -130,14 +130,14 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
         </div>
 
 
-        <div class="burger-menu">
-          <input type="checkbox" class="burger-toggle" id="burger-toggle" />
-          <label for="burger-toggle" class="burger-icon">
+        <div className="burger-menu">
+          <input type="checkbox" className="burger-toggle" id="burger-toggle" />
+          <label htmlFor="burger-toggle" className="burger-icon">
             <span></span>
             <span></span>
             <span></span>
           </label>
-          <nav class="burger-nav">
+          <nav className="burger-nav">
             <div>
               <span><Link to={`/collection`}>All</Link></span>
             </div>

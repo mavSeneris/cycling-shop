@@ -86,28 +86,28 @@ a {
 
 /** Home */
 
-.slide-caption{
+.slide-caption {
   font-size: 3rem;
 }
 
 
-@media(max-width: 30rem) {
+/* @media(max-width: 30rem) {
   .slide {
     width: 100vw;
     height: 390px;
   }
 
-  .slide-image{
+  .slide-image {
     width: 100%;
     max-height: 400px;
-    background-size: contain;
+    background-size: cover;
   }
 
-  .slide-caption{
-   font-size: 1rem;
+  .slide-caption {
+    font-size: 1rem;
   }
 
-}
+} */
 
 
 

@@ -86,6 +86,29 @@ a {
 
 /** Home */
 
+.slide-caption{
+  
+}
+
+
+@media(max-width: 30rem) {
+  .slide {
+    width: 100vw;
+    height: 300px;
+  }
+
+  .slide-image{
+    width: 100%;
+    max-height: 400px;
+    background-size: contain;
+  }
+
+  .slide-caption{
+   font-size: 1rem;
+  }
+
+}
+
 
 
 
@@ -348,8 +371,8 @@ a {
     border: 1px solid #ccc;
     font-size: 0.7rem;
   }
-  
-  .user-initial:hover + .logout-message {
+
+  .user-initial:hover+.logout-message {
     display: block;
   }
 }

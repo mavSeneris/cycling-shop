@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useOutletContext, useParams } from "react-router-dom";
+import React from "react";
+import { useOutletContext, useParams, useLoaderData } from "react-router-dom";
 import ProductDetail from "../routes/ProductDetail";
+import { getProducts } from "../api";
+
+export function loader(){
+  return getProducts()
+}
 
 export default function ProductPage() {
   const [
@@ -13,14 +18,8 @@ export default function ProductPage() {
     username,
     setUsername,
   ] = useOutletContext();
-  const [products, setProducts] = useState(null);
+  const products = useLoaderData()
   const params = useParams();
-
-  useEffect(() => {
-    fetch(`/api/products`)
-      .then((res) => res.json())
-      .then((data) => setProducts(data.products));
-  }, []);
 
   return (
     <div className="product-page-container">

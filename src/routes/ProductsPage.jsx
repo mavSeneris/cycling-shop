@@ -10,6 +10,7 @@ export function loader(){
 export default function AllProducts() {
   const navigate = useNavigate()
   const products = useLoaderData()
+  
 
   function handleGoBack() {
     navigate('/')

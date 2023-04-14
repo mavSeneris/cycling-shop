@@ -7,7 +7,7 @@ export default function WomenPage() {
   const navigate = useNavigate()
 
   function handleGoBack(){
-    navigate('/home')
+    navigate('/')
   }
 
   return (

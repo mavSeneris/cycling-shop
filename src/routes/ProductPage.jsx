@@ -1,8 +1,7 @@
 import React from 'react';
 import { collections } from '../data';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useOutletContext, useParams } from 'react-router-dom';
 import ProductDetail from '../routes/ProductDetail';
-import { useOutletContext } from 'react-router-dom';
 
 export default function ProductPage() {
   const [bag, setBag, isLoggedIn, setIsLoggedIn, password, setPassword, username, setUsername] = useOutletContext();

@@ -9,7 +9,7 @@ export default function MenPage() {
   console.log(location)
 
   function handleGoBack() {
-    navigate('/home')
+    navigate('/')
   }
   return (
     <>

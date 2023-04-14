@@ -81,8 +81,6 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
     setShowMessage(false);
   };
 
-  console.log(username)
-
   const bagItems = bag.map(item =>
     <div className="bag-item-container"
       key={nanoid()}

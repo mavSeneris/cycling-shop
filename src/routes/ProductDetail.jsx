@@ -1,12 +1,16 @@
-import React from 'react';
-import { useOutletContext, useNavigate } from 'react-router-dom';
-import { collections } from '../data';
+import React, {useState} from 'react';
+import { useOutletContext, useNavigate, useParams } from 'react-router-dom';
 
 export default function ProductsDetail({ item }) {
   // Get the bag and the function to update it from the router context
   const [bag, setBag] = useOutletContext();
+  const [products, setProducts] = useState(null)
   const navigate = useNavigate()
-  console.log(location)
+  const params = useParams()
+
+  fetch("/api/products/")
+    .then(res => res.json())
+    .then(data => setProducts(data.products))
 
   function handleGoBack() {
     navigate(-1)
@@ -16,7 +20,7 @@ export default function ProductsDetail({ item }) {
   function addToCart(id) {
     // Check if the item is already in the bag
     const existingItem = bag.find(item => item.id === id);
-      // If the item is already in the bag, update its quantity and price
+    // If the item is already in the bag, update its quantity and price
     if (existingItem) {
       setBag(currentItems => {
         return currentItems.map((item) => {
@@ -29,7 +33,7 @@ export default function ProductsDetail({ item }) {
       });
     } else {
       // If the item is not in the bag, add it with a quantity of 1 and its original price
-      const itemToAdd = collections.find(item => item.id === id);
+      const itemToAdd = products.find(item => item.id === id);
       setBag(currentItems => [...currentItems, { ...itemToAdd, quantity: 1, price: itemToAdd.price }]);
     }
   }

@@ -9,7 +9,7 @@ import Layout from "./components/Layout";
 import Home from "./routes/Home"
 import ProductsPage, { loader as productsLoader } from "./routes/ProductsPage"
 import MenPage, {loader as menProductsLoader} from "./routes/MenPage"
-import WomenPage from "./routes/WomenPage"
+import WomenPage, {loader as womenProductsLoader} from "./routes/WomenPage"
 import Login from "./routes/Login"
 import Register from "./routes/Register"
 import ProductPage from "./routes/ProductPage"
@@ -23,7 +23,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       loader={productsLoader}
     />
     <Route path="men" element={<MenPage />} loader={menProductsLoader}/>
-    <Route path="women" element={<WomenPage />} />
+    <Route path="women" element={<WomenPage />} loader={womenProductsLoader}/>
     <Route path="login" element={<Login />} />
     <Route path="sign-up" element={<Register />} />
     <Route path="collection/product/:id" element={<ProductPage />} />

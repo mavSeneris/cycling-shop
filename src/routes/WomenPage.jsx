@@ -1,13 +1,18 @@
 import React from 'react'
-import { collections } from '../data'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLoaderData } from 'react-router-dom'
 import WomenCollections from '../components/WomenCollections'
+import { getProducts } from '../api'
+
+export function loader(){
+  return getProducts()
+}
 
 export default function WomenPage() {
   const navigate = useNavigate()
+  const products = useLoaderData()
 
   function handleGoBack(){
-    navigate('/home')
+    navigate('/')
   }
 
   return (
@@ -35,7 +40,7 @@ export default function WomenPage() {
         </form>
       </div>
       <div className='all-products'>
-        {collections.map((item) => {
+        {products.map((item) => {
           if (item.category === "women") {
             return <WomenCollections key={item.id} item={item} />
           }

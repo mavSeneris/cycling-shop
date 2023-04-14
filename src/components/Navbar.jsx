@@ -81,8 +81,6 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
     setShowMessage(false);
   };
 
-  console.log(username)
-
   const bagItems = bag.map(item =>
     <div className="bag-item-container"
       key={nanoid()}
@@ -139,19 +137,19 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
           </label>
           <nav className="burger-nav">
             <div>
-              <span><Link to={`/collection`}>All</Link></span>
+              <span><Link to={`collection`}>All</Link></span>
             </div>
             <div>
-              <span><Link to={`/men`}>Men</Link></span>
+              <span><Link to={`men`}>Men</Link></span>
             </div>
             <div>
-              <span><Link to={`/women`}>Women</Link></span>
+              <span><Link to={`women`}>Women</Link></span>
             </div>
           </nav>
         </div>
 
       </div>
-      <div className='center'><Link to={'/home'}>MAAV</Link></div>
+      <div className='center'><Link to={'/'}>MAAV</Link></div>
       <div className='right'>
         {!isLoggedIn ? <div className='auth'>
           <div className='sign-in'>

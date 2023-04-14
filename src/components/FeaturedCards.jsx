@@ -5,7 +5,7 @@ export default function FeaturedCards({ item }) {
 
   return (
     <div className='featured-container'>
-      <Link to={`product/${item.id}`}>
+      <Link to={`collection/product/${item.id}`} >
         <div className='featured-wrapper'>
           <img className='featured-image' src={item.img1} />
           <img className='featured-image-hover' src={item.img2} />

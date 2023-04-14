@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./routes/Home"
-import ProductsPage, { loader as productLoader } from "./routes/ProductsPage"
-import MenPage from "./routes/MenPage"
+import ProductsPage, { loader as productsLoader } from "./routes/ProductsPage"
+import MenPage, {loader as menProductsLoader} from "./routes/MenPage"
 import WomenPage from "./routes/WomenPage"
 import Login from "./routes/Login"
 import Register from "./routes/Register"
@@ -20,9 +20,9 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route
       path="collection"
       element={<ProductsPage />}
-      loader={productLoader}
+      loader={productsLoader}
     />
-    <Route path="men" element={<MenPage />} />
+    <Route path="men" element={<MenPage />} loader={menProductsLoader}/>
     <Route path="women" element={<WomenPage />} />
     <Route path="login" element={<Login />} />
     <Route path="sign-up" element={<Register />} />

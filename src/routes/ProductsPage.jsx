@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate, useLoaderData } from 'react-router-dom'
-import { collections } from "../data"
 import ProductCard from '../components/ProductCard'
 import { getProducts } from '../api'
 
@@ -11,7 +10,6 @@ export function loader(){
 export default function AllProducts() {
   const navigate = useNavigate()
   const products = useLoaderData()
-
 
   function handleGoBack() {
     navigate('/')

@@ -1,12 +1,15 @@
 import React from 'react'
-import { collections } from '../data'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLoaderData } from 'react-router-dom'
 import MenCollection from '../components/MenCollection'
+import { getProducts } from '../api'
 
+export function loader(){
+  return getProducts()
+}
 
 export default function MenPage() {
   const navigate = useNavigate()
-  console.log(location)
+  const products = useLoaderData()
 
   function handleGoBack() {
     navigate('/')
@@ -36,7 +39,7 @@ export default function MenPage() {
         </form>
       </div>
       <div className='all-products'>
-        {collections.map((item) => {
+        {products.map((item) => {
           if (item.category === "men") {
             return <MenCollection key={item.id} item={item} />
           }

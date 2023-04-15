@@ -1,16 +1,51 @@
-import React from 'react'
-import { useNavigate, useLoaderData } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate, useLoaderData, useSearchParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { getProducts } from '../api'
 
-export function loader(){
+export function loader() {
   return getProducts()
 }
 
 export default function AllProducts() {
+  const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
   const products = useLoaderData()
-  
+  const [sortedProducts, setSortedProducts] = useState(products);
+  const categoryFilter = searchParams.get("category")
+
+  function handleClick(order) {
+    const sorted = products.slice().sort((a, b) => {
+      if (order === 'highToLow') {
+        return b.price - a.price;
+      } else if (order === 'lowToHigh') {
+        return a.price - b.price;
+      } else {
+        throw new Error('Invalid order parameter');
+      }
+    });
+    setSortedProducts(sorted);
+  }
+
+  function handleReset() {
+    setSortedProducts(products);
+  }
+
+
+  const displayedProducts = categoryFilter
+    ? sortedProducts.filter(product => product.category === categoryFilter)
+    : sortedProducts
+
+  function handleFilterChange(key, value) {
+    setSearchParams(prevParams => {
+      if (value === null) {
+        prevParams.delete(key)
+      } else {
+        prevParams.set(key, value)
+      }
+      return prevParams
+    })
+  }
 
   function handleGoBack() {
     navigate('/')
@@ -28,21 +63,26 @@ export default function AllProducts() {
       <div className='form-container'>
         <form className='form-select'>
           <select className='sort price'>
-            <option value="">Sort</option>
-            <option value="option1">Price High to Low</option>
-            <option value="option2">Price Low to High</option>
+            <option onClick={() => handleReset()} value="">Sort</option>
+            <option onClick={() => handleClick('highToLow')} value="option1">Price High to Low</option>
+            <option onClick={() => handleClick('lowToHigh')} value="option2">Price Low to High</option>
+            <option onClick={() => handleReset()} value="option2">Reset Prices</option>
+
           </select>
 
           <select className='sort gender'>
             <option value="">Filter</option>
-            <option value="option1">Men</option>
-            <option value="option2">Woman</option>
+            <option onClick={() => handleFilterChange("category", "")} value="option1">All</option>
+            <option onClick={() => handleFilterChange("category", "men")} value="option1">Men</option>
+            <option onClick={() => handleFilterChange("category", "women")} value="option2">Woman</option>
+            <option onClick={() => handleFilterChange("category", "accessories")} value="option3">Accessories</option>
+
           </select>
         </form>
       </div>
 
       <img className='accent-image' src="https://images.prismic.io/maap/53a72c2f-e18e-41a2-9343-9e0ac6f90f8a_New+Season+Road_Collection_Ads_man.png?auto=compress,format" />
-      {products.map((item) => {
+      {displayedProducts.map((item) => {
         return (<ProductCard
           key={item.id}
           item={item}

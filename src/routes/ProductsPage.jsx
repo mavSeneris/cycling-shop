@@ -1,23 +1,22 @@
-import React, { useState } from 'react'
-import { useNavigate, useLoaderData, useSearchParams } from 'react-router-dom'
-import ProductCard from '../components/ProductCard'
-import { getProducts } from '../api'
+import React, { useState } from 'react';
+import { useNavigate, useLoaderData, useSearchParams } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
+import { getProducts } from '../api';
 
 export function loader() {
-  return getProducts()
+  return getProducts();
 }
 
 export default function AllProducts() {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const navigate = useNavigate()
-  const products = useLoaderData()
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const products = useLoaderData();
 
   const [sortedProducts, setSortedProducts] = useState(products);
-  const categoryFilter = searchParams.get("category")
+  const categoryFilter = searchParams.get('category');
 
-
-
-  function handleClick(order) {
+  function handleSortChange(e) {
+    const order = e.target.value;
     const sorted = products.slice().sort((a, b) => {
       if (order === 'highToLow') {
         return b.price - a.price;
@@ -34,49 +33,59 @@ export default function AllProducts() {
     setSortedProducts(products);
   }
 
-
   const displayedProducts = categoryFilter
-    ? sortedProducts.filter(product => product.category === categoryFilter)
-    : sortedProducts
+    ? sortedProducts.filter((product) => product.category === categoryFilter)
+    : sortedProducts;
 
-  function handleFilterChange(key, value) {
-    setSearchParams(prevParams => {
-      if (value === null) {
-        prevParams.delete(key)
+  function handleFilterChange(e) {
+    const key = 'category';
+    const value = e.target.value;
+    setSearchParams((prevParams) => {
+      if (value === '') {
+        prevParams.delete(key);
       } else {
-        prevParams.set(key, value)
+        prevParams.set(key, value);
       }
-      return prevParams
-    })
+      return prevParams;
+    });
   }
 
   function handleGoBack() {
-    navigate('/')
+    navigate('/');
   }
 
   return (
-    <div className='all-products'>
-      <div className='backlink'>
+    <div className="all-products">
+      <div className="backlink">
         <button onClick={handleGoBack}>
-          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M217.9 256L345 129c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.3-34 0L167 239c-9.1 9.1-9.3 23.7-.7 33.1L310.9 417c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L217.9 256z"></path></svg>
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            viewBox="0 0 512 512"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M217.9 256L345 129c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.3-34 0L167 239c-9.1 9.1-9.3 23.7-.7 33.1L310.9 417c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L217.9 256z"></path>
+          </svg>
           Back
         </button>
       </div>
-      <h1 className='product-title'>MAAV Collections</h1>
-      <div className='form-container'>
-        <form className='form-select'>
-          <select className='sort price'>
-            <option onClick={() => handleReset()} value="">Sort</option>
-            <option onClick={() => handleClick('highToLow')} value="option1">Price High to Low</option>
-            <option onClick={() => handleClick('lowToHigh')} value="option2">Price Low to High</option>
-
+      <h1 className="product-title">MAAV Collections</h1>
+      <div className="form-container">
+        <form className="form-select">
+          <select className="sort price" onChange={handleSortChange}>
+            <option value="">Sort</option>
+            <option value="highToLow">Price High to Low</option>
+            <option value="lowToHigh">Price Low to High</option>
           </select>
 
-          <select className='sort gender'>
-            <option onClick={() => handleFilterChange("category", "")} value="">Filter</option>
-            <option onClick={() => handleFilterChange("category", "men")} value="option1">Men</option>
-            <option onClick={() => handleFilterChange("category", "women")} value="option2">Woman</option>
-            <option onClick={() => handleFilterChange("category", "accessories")} value="option3">Accessories</option>
+          <select className="sort gender" onChange={handleFilterChange}>
+            <option value="">Filter</option>
+            <option value="men">Men</option>
+            <option value="women">Woman</option>
+            <option value="accessories">Accessories</option>
           </select>
         </form>
       </div>

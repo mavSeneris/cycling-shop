@@ -184,12 +184,12 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
           <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1.2em" width="1.4em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M5 22a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v3h-2V4H6v16h12v-2h2v3a1 1 0 0 1-1 1H5zm13-6v-3h-7v-2h7V8l5 4-5 4z"></path></g></svg>
         </div>}
 
-        {path !== "/" && <div className='shopping-cart' onClick={toggleBag}>
+        <div className='shopping-cart' onClick={toggleBag}>
           <a href={'#'}>
             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="1.4em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M14 5H2v9a1 1 0 001 1h10a1 1 0 001-1V5zM1 4v10a2 2 0 002 2h10a2 2 0 002-2V4H1z" clipRule="evenodd"></path><path d="M8 1.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"></path></svg>
           </a>
           {totalQuantity > 0 && <div className='item-count'>{totalQuantity}</div>}
-        </div>}
+        </div>
       </div>
       {showBag && totalQuantity > 0 && <div className='bag'>
         <h4>Your Shopping Bag</h4>

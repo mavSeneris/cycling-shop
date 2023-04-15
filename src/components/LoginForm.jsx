@@ -9,7 +9,7 @@ export default function LoginForm() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(`Username: ${username}\nPassword: ${password}`);
-    navigate('/home')
+    navigate('/')
     setIsLoggedIn(true)
     console.log(isLoggedIn)
   }

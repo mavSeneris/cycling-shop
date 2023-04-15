@@ -26,7 +26,7 @@ export default function RegisterForm() {
       setUsername(username)
       setPassword(password)
       alert(`Welcome, ${username}!`)
-      redirect('/home')
+      redirect('/')
     } else if (password !== confirmPassword || confirmPassword == null) {
       setIsLoggedIn(false)
       setPassword("")

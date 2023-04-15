@@ -22,6 +22,8 @@ export default function AllProducts() {
         return b.price - a.price;
       } else if (order === 'lowToHigh') {
         return a.price - b.price;
+      } else if(order === 'sort'){
+        return null
       } else {
         throw new Error('Invalid order parameter');
       }
@@ -72,7 +74,7 @@ export default function AllProducts() {
       <div className="form-container">
         <form className="form-select">
           <select className="sort price" onChange={handleSortChange}>
-            <option value="">Sort</option>
+            <option value="sort">Sort</option>
             <option value="highToLow">Price High to Low</option>
             <option value="lowToHigh">Price Low to High</option>
           </select>
@@ -86,12 +88,14 @@ export default function AllProducts() {
         </form>
       </div>
 
+      {/* <img className='accent-image' src="https://images.prismic.io/maap/53a72c2f-e18e-41a2-9343-9e0ac6f90f8a_New+Season+Road_Collection_Ads_man.png?auto=compress,format" /> */}
       {displayedProducts.map((item) => {
         return (<ProductCard
           key={item.id}
           item={item}
         />)
       })}
+      {/* <img className="accent-image2" src="https://images.prismic.io/maap/bacb33e8-50c8-4d36-bc5b-370e82f03593_New+Season+Road_Collection_Ads_woman.png?auto=compress,format" /> */}
     </div>
   )
 }

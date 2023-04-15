@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate, useLoaderData } from 'react-router-dom'
 import MenCollection from '../components/MenCollection'
 import { getProducts } from '../api'
 
-export function loader(){
+export function loader() {
   return getProducts()
 }
 
 export default function MenPage() {
   const navigate = useNavigate()
   const products = useLoaderData()
+  const [sortedProducts, setSortedProducts] = useState(products);
+
+
+  function handleSortChange(e) {
+    const order = e.target.value;
+    const sorted = products.slice().sort((a, b) => {
+      if (order === 'highToLow') {
+        return b.price - a.price;
+      } else if (order === 'lowToHigh') {
+        return a.price - b.price;
+      } else if (order === "sort") {
+        return null
+      } else {
+        throw new Error('Invalid order parameter');
+      }
+    });
+    setSortedProducts(sorted);
+  }
 
   function handleGoBack() {
     navigate('/')
@@ -25,15 +43,15 @@ export default function MenPage() {
       <h1 className='product-title'>MAAV/Men Collections</h1>
       <div className='form-container'>
         <form className='form-select'>
-          <select className='sort price'>
-            <option value="">Sort</option>
-            <option value="option1">Price High to Low</option>
-            <option value="option2">Price Low to High</option>
+        <select className="sort price" onChange={handleSortChange}>
+            <option value="sort">Sort</option>
+            <option value="highToLow">Price High to Low</option>
+            <option value="lowToHigh">Price Low to High</option>
           </select>
         </form>
       </div>
       <div className='all-products'>
-        {products.map((item) => {
+        {sortedProducts.map((item) => {
           if (item.category === "men") {
             return <MenCollection key={item.id} item={item} />
           }

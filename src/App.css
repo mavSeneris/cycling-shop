@@ -583,6 +583,7 @@ a {
   font-size: 1rem;
   border: none;
   background-color: transparent;
+  outline: none;
   width: 200px;
   padding: 20px;
 }

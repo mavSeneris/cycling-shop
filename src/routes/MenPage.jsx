@@ -30,12 +30,6 @@ export default function MenPage() {
             <option value="option1">Price High to Low</option>
             <option value="option2">Price Low to High</option>
           </select>
-
-          <select className='sort gender'>
-            <option value="">Filter</option>
-            <option value="option1">Men</option>
-            <option value="option2">Woman</option>
-          </select>
         </form>
       </div>
       <div className='all-products'>

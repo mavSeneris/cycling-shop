@@ -11,8 +11,11 @@ export default function AllProducts() {
   const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
   const products = useLoaderData()
+ 
   const [sortedProducts, setSortedProducts] = useState(products);
   const categoryFilter = searchParams.get("category")
+
+  
 
   function handleClick(order) {
     const sorted = products.slice().sort((a, b) => {
@@ -76,9 +79,8 @@ export default function AllProducts() {
             <option onClick={() => handleFilterChange("category", "men")} value="option1">Men</option>
             <option onClick={() => handleFilterChange("category", "women")} value="option2">Woman</option>
             <option onClick={() => handleFilterChange("category", "accessories")} value="option3">Accessories</option>
-
           </select>
-        </form>
+          </form>
       </div>
 
       <img className='accent-image' src="https://images.prismic.io/maap/53a72c2f-e18e-41a2-9343-9e0ac6f90f8a_New+Season+Road_Collection_Ads_man.png?auto=compress,format" />

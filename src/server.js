@@ -289,8 +289,42 @@ createServer({
         quantity: 1
       }
     )
-    
-    
+    server.create("product",
+      {
+        id: 25,
+        name: "Team Bib Evo",
+        price: 355.00,
+        img1: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMENSTeamBibEvoMAP-MAB110_BLKBLKBLACKBLACK_PDP_ADDITIONAL_IMAGES_01_DESKTOP.jpg%3Fv%3D1638765120&w=1920&q=100",
+        img2: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMENSTeamBibEvoMAP-MAB110_BLKBLKBLACKBLACK_PDP_HERO_01_DESKTOP_40e46355-34d9-4850-ad68-0ed61d6237c0.jpg%3Fv%3D1638765120&w=1920&q=100",
+        category: "men",
+        featured: false,
+        quantity: 1
+      }
+    )
+    server.create("product",
+      {
+        id: 26,
+        name: "Training Bib 3.0",
+        price: 295.00,
+        img1: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMAP-MAB144_ETHBLU_Earth_Blue_TrainingBib3.0_EarthBlue_PDP_SPECS_03_DESKTOP.jpg%3Fv%3D1667427480&w=1920&q=100",
+        img2: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMAP-MAB144_ETHBLU_Earth_Blue_TrainingBib3.0_EarthBlue_PDP_HERO_01_DESKTOP.jpg%3Fv%3D1667427480&w=1920&q=100",
+        category: "men",
+        featured: false,
+        quantity: 1
+      }
+    )
+    server.create("product",
+      {
+        id: 27,
+        name: "Ellipse Team Bib Evo",
+        price: 375.00,
+        img1: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMAP-MAB163_DKCRIM_Ellipse_20Team_20Bib_20Evo_20Short_Dark_20Crimson_PDP_SPECS_03_DESKTOP.jpg%3Fv%3D1675052856&w=1920&q=100",
+        img2: "https://maap.cc/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0510%2F7809%2Fproducts%2FMAP-MAB163_DKCRIM_Ellipse_20Team_20Bib_20Evo_20Short_Dark_20Crimson_PDP_HERO_01_DESKTOP.jpg%3Fv%3D1675052856&w=1920&q=100",
+        category: "men",
+        featured: false,
+        quantity: 1
+      }
+    )
   },
 
   routes() {
@@ -302,7 +336,7 @@ createServer({
       return schema.products.all()
     })
 
-    this.get("/products/:id", (schema, request) => {
+    this.get("/vans/:id", (schema, request) => {
         const id = request.params.id
         return schema.vans.find(id)
     })

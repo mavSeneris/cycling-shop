@@ -63,6 +63,8 @@ export default function AllProducts() {
         </button>
       </div>
       <h1 className='product-title'>MAAV Collections</h1>
+      <button onClick={() => handleFilterChange("category", "men")} value="option1">All</button>
+
       <div className='form-container'>
         <form className='form-select'>
           <select className='sort price'>

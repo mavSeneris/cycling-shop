@@ -19,7 +19,7 @@ import TestRoute, { loader as testLoader } from "./routes/Category";
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
     <Route index element={<Home />} />
-    <Route path="category" element={<CategoryLayout />}>
+    {/* <Route path="category" element={<CategoryLayout />}>
       <Route
         index
         element={<TestRoute />}
@@ -27,15 +27,15 @@ const router = createBrowserRouter(createRoutesFromElements(
       />
       <Route path="men" element={<MenPage />} loader={menProductsLoader} />
       <Route path="women" element={<WomenPage />} loader={womenProductsLoader} /> 
-    </Route>
+    </Route> */}
 
-    {/* <Route
+    <Route
       path="collection"
       element={<ProductsPage />}
       loader={productsLoader}
-    /> */}
-    {/* <Route path="men" element={<MenPage />} loader={menProductsLoader} />
-    <Route path="women" element={<WomenPage />} loader={womenProductsLoader} /> */}
+    />
+    <Route path="men" element={<MenPage />} loader={menProductsLoader} />
+    <Route path="women" element={<WomenPage />} loader={womenProductsLoader} />
     <Route path="login" element={<Login />} />
     <Route path="sign-up" element={<Register />} />
     <Route path="collection/product/:id" element={<ProductPage />} loader={productLoader} />

@@ -19,6 +19,8 @@ import TestRoute, { loader as testLoader } from "./routes/Category";
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
     <Route index element={<Home />} />
+    
+    {/*! Under maintenance do not uncomment */}
     {/* <Route path="category" element={<CategoryLayout />}>
       <Route
         index

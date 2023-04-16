@@ -117,13 +117,13 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
       <div className='left'>
         <div className='nav-menu'>
           <div>
-            <span><Link to={`/collection`}>All</Link></span>
+            <span><Link to={`category`} end >All</Link></span>
           </div>
           <div>
-            <span><Link to={`/men`}>Men</Link></span>
+            <span><Link to={`category/men`}>Men</Link></span>
           </div>
           <div>
-            <span><Link to={`/women`}>Women</Link></span>
+            <span><Link to={`category/women`}>Women</Link></span>
           </div>
         </div>
 

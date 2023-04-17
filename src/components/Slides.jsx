@@ -23,8 +23,6 @@ const divStyle = {
   alignItems: 'center',
   justifyContent: 'center',
   backgroundSize: 'cover',
-  // backgroundRepeat: 'no-repeat',
-  // width: '100%',
   height: '80vh',
   position: 'relative'
 }

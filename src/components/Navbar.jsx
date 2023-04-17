@@ -160,7 +160,7 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
         <Link to={'/'}>MAAV</Link>
       </div>
       <div className='right'>
-        {!isLoggedIn ? <div className='auth'>
+        {!isLoggedIn ? <div className='auth' onClick={handleClick}>
           <div className='sign-in'>
             <Link to='/login'>
               <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1.48em" width="1.48em" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -195,12 +195,12 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
 
         <div className='shopping-cart' onClick={toggleBag}>
           <a href={'#'}>
-            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="1.4em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M14 5H2v9a1 1 0 001 1h10a1 1 0 001-1V5zM1 4v10a2 2 0 002 2h10a2 2 0 002-2V4H1z" clipRule="evenodd"></path><path d="M8 1.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"></path></svg>
+            <svg onClick={handleClick} stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="1.4em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M14 5H2v9a1 1 0 001 1h10a1 1 0 001-1V5zM1 4v10a2 2 0 002 2h10a2 2 0 002-2V4H1z" clipRule="evenodd"></path><path d="M8 1.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"></path></svg>
           </a>
           {totalQuantity > 0 && <div className='item-count'>{totalQuantity}</div>}
         </div>
       </div>
-      {showBag && totalQuantity > 0 && <div className='bag'>
+      {showBag && totalQuantity > 0 && <div className='bag' >
         <h4>Your Shopping Bag</h4>
         <div className="bag-item-container-wrapper">{bagItems}</div>
         <div className="items-total-price-container">

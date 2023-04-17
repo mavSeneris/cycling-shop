@@ -25,7 +25,7 @@ const divStyle = {
   backgroundSize: 'cover',
   // backgroundRepeat: 'no-repeat',
   // width: '100%',
-  height: '74vh',
+  height: '80vh',
   position: 'relative'
 }
 

@@ -156,7 +156,9 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
         </div>
 
       </div>
-      <div className='center'><Link to={'/'}>MAAV</Link></div>
+      <div className='center' onClick={handleClick}>
+        <Link to={'/'}>MAAV</Link>
+      </div>
       <div className='right'>
         {!isLoggedIn ? <div className='auth'>
           <div className='sign-in'>

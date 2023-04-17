@@ -106,10 +106,7 @@ a {
   }
 }
 
-
-
 /** Home */
-
 @media(max-width: 60rem) {
   .slide-image {
     width: 100%;
@@ -124,16 +121,12 @@ a {
   }
 }
 
-
 @media(max-width: 30rem) {
   .slide {
     width: 100vw;
   }
 
 }
-
-
-
 
 /* Navbar */
 .navbar {

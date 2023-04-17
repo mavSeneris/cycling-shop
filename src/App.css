@@ -679,6 +679,7 @@ a {
 /*TODO AUTH PAGES: MOBILE */
 @media(max-width: 30rem) {
   .form-card {
+    width: 100vw;
     height: 100vh;
   }
 }

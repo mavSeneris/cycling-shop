@@ -6,11 +6,14 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
   const [showBag, setShowBag] = useState(false)
   const [totalPrice, setTotalPrice] = useState()
   const [showMessage, setShowMessage] = useState(false);
-
+  const [isChecked, setIsChecked] = useState(false);
 
   const location = useLocation()
-  const path = location.pathname
   const navigate = useNavigate()
+
+  const handleClick = () => {
+    setIsChecked(false);
+  }
 
   // Calculate the total price of all items in the shopping bag using reduce.
   useEffect(() => {
@@ -23,7 +26,6 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
   // taking into account their quantities.
   const totalItemPrice = bag.reduce((total, item) =>
     total + item.quantity * item.price, 0)
-
 
   // Calculate the total number of items in the shopping bag by summing their quantities.
   const totalQuantity = bag.reduce((accumulator, currentItem) =>
@@ -127,9 +129,14 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
           </div>
         </div>
 
-
         <div className="burger-menu">
-          <input type="checkbox" className="burger-toggle" id="burger-toggle" />
+          <input
+            type="checkbox"
+            className="burger-toggle"
+            id="burger-toggle"
+            checked={isChecked}
+            onChange={() => setIsChecked(!isChecked)}
+          />
           <label htmlFor="burger-toggle" className="burger-icon">
             <span></span>
             <span></span>
@@ -137,13 +144,13 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
           </label>
           <nav className="burger-nav">
             <div>
-              <span><Link to={`collection`}>All</Link></span>
+              <span><Link to={`collection`} onClick={handleClick}>All</Link></span>
             </div>
             <div>
-              <span><Link to={`men`}>Men</Link></span>
+              <span><Link to={`men`} onClick={handleClick}>Men</Link></span>
             </div>
             <div>
-              <span><Link to={`women`}>Women</Link></span>
+              <span><Link to={`women`} onClick={handleClick}>Women</Link></span>
             </div>
           </nav>
         </div>

@@ -128,7 +128,6 @@ a {
 @media(max-width: 30rem) {
   .slide {
     width: 100vw;
-    height: 100vh;
   }
 
 }

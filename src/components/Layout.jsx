@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Outlet, useLocation, Link } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
@@ -10,8 +10,7 @@ export default function Layout() {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [bag, setBag] = useState(() => JSON.parse(localStorage.getItem('bag')) || [])
-  const location = useLocation()
-  const path = location.pathname
+
 
   // Update localStorage whenever the 'bag' state changes
   useEffect(() => {
@@ -21,8 +20,10 @@ export default function Layout() {
   useEffect(() => {
     localStorage.setItem('username', JSON.stringify(username));
   }, [username])
+
+
   return (
-    <div>
+    <div className='site-wrapper'>
       <Navbar bag={bag} setBag={setBag} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUsername={setUsername} username={username} />
       <Outlet context={
         [

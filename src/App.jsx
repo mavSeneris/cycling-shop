@@ -6,13 +6,14 @@ import {
   Route
 } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./routes/Home"
-import ProductsPage, { loader as productsLoader } from "./routes/ProductsPage"
-import MenPage, { loader as menProductsLoader } from "./routes/MenPage"
-import WomenPage, { loader as womenProductsLoader } from "./routes/WomenPage"
-import Login from "./routes/Login"
-import Register from "./routes/Register"
-import ProductPage, { loader as productLoader } from "./routes/ProductPage"
+import Home from "./pages/Home"
+import ProductsPage, { loader as productsLoader } from "./pages/ProductsPage"
+import MenPage, { loader as menProductsLoader } from "./pages/MenPage"
+import WomenPage, { loader as womenProductsLoader } from "./pages/WomenPage"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import ProductPage, { loader as productLoader } from "./pages/ProductPage"
+import AdminLayout from "./components/AdminLayout";
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
@@ -25,6 +26,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="collection/product/:id" element={<ProductPage />} loader={productLoader} />
     <Route path="men/product/:id" element={<ProductPage />} loader={productLoader} />
     <Route path="women/product/:id" element={<ProductPage />} loader={productLoader} />
+    <Route path="admin" element={<AdminLayout/>}></Route>
   </Route>
 
 ))

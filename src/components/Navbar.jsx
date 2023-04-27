@@ -127,6 +127,9 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
           <div>
             <span><Link to={`/women`}>Women</Link></span>
           </div>
+          <div>
+            <span><Link to={`/admin`}>Dashboard</Link></span>
+          </div>
         </div>
 
         <div className="burger-menu">

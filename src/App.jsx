@@ -14,6 +14,10 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import ProductPage, { loader as productLoader } from "./pages/ProductPage"
 import AdminLayout from "./components/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
+import Income from "./pages/admin/AdminIncome";
+import Products from "./pages/admin/AdminProducts";
+import Reviews from "./pages/admin/AdminReviews";
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
@@ -26,7 +30,13 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="collection/product/:id" element={<ProductPage />} loader={productLoader} />
     <Route path="men/product/:id" element={<ProductPage />} loader={productLoader} />
     <Route path="women/product/:id" element={<ProductPage />} loader={productLoader} />
-    <Route path="admin" element={<AdminLayout/>}></Route>
+    <Route path="admin" element={<AdminLayout/>}>
+      <Route index element={<Dashboard/>}/>
+      <Route path="income" element={<Income/>}/>
+      <Route path="products" element={<Products/>}/>
+      <Route path="reviews" element={<Reviews/>}/>
+
+    </Route>
   </Route>
 
 ))

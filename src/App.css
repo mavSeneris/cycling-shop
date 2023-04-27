@@ -1002,6 +1002,25 @@ button {
   }
 }
 
+/** Admin page  */
+.admin-layout{
+  padding: 15px;  
+}
+
+.admin-layout-links{
+  display: flex;
+  gap: 15px;
+}
+
+.admin-layout-links > a {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.admin-layout-outlet{
+  padding: 15px;
+}
+
 /*! REACT ROUTER CSS */
 
 #error-page {

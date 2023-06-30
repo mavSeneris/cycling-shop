@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid'
 
 export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername, setIsLoggedIn }) {
   const [showBag, setShowBag] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
   const [totalPrice, setTotalPrice] = useState()
   const [showMessage, setShowMessage] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
@@ -127,9 +128,9 @@ export default function Navbar({ bag, setBag, isLoggedIn, username, setUsername,
           <div>
             <span><Link to={`/women`}>Women</Link></span>
           </div>
-          <div>
+          {isAdmin && <div>
             <span><Link to={`/admin`}>Dashboard</Link></span>
-          </div>
+          </div>}
         </div>
 
         <div className="burger-menu">
